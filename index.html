@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoja de ruta académica · DAM + Ingeniería Informática · 2026 → máster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F6FA; --card:#FFFFFF; --ink:#12161D; --ink-2:#3D4757; --ink-3:#6B7688;
+  --rule:#DCE2EB; --rule-2:#EDF1F6;
+  --dam:#B0651A;   --dam-bg:#FBF0E4;
+  --uned:#4A3FA6;  --uned-bg:#EEECFA;
+  --uji:#1C7A55;   --uji-bg:#E6F4EE;
+  --uv:#7A2E5C;    --uv-bg:#F6EAF1;
+  --upv:#C8102E;   --upv-bg:#FBE9EC;
+  --eras:#1B4FA8;  --eras-bg:#E7EEFA;
+  --mast:#0C6F79;  --mast-bg:#E3F2F3;
+  --warn:#8A5A00;  --warn-bg:#FFF6E0; --warn-line:#E8B84B;
+  --ok:#1C7A55;
+  --disp:'Archivo',system-ui,sans-serif;
+  --body:'Source Serif 4',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --rail:264px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.u{font-family:var(--disp);letter-spacing:-.014em}
+code,.m{font-family:var(--mono);font-size:.86em;font-variant-numeric:tabular-nums}
+
+/* ---------- rail ---------- */
+#rail{position:fixed;inset:0 auto 0 0;width:var(--rail);background:#0F1319;color:#C3CBD8;overflow-y:auto;z-index:60;padding:22px 0 40px}
+#rail .brand{padding:0 20px 16px;border-bottom:1px solid #232A34;margin-bottom:14px}
+#rail .brand b{display:block;font-family:var(--disp);font-weight:800;font-size:15px;color:#fff;letter-spacing:-.02em;line-height:1.25}
+#rail .brand span{font-family:var(--mono);font-size:10.5px;color:#7B8698;letter-spacing:.06em;text-transform:uppercase}
+#rail a{display:block;padding:7px 20px 7px 18px;color:#AEB8C7;text-decoration:none;font-family:var(--disp);font-size:13.2px;line-height:1.35;border-left:3px solid transparent;transition:all .18s}
+#rail a .n{font-family:var(--mono);font-size:10.5px;color:#5E6A7C;margin-right:7px}
+#rail a:hover{color:#fff;background:#171D25}
+#rail a.on{color:#fff;background:#181F28;border-left-color:#F0B429}
+#rail a.on .n{color:#F0B429}
+#railToggle{display:none}
+
+/* ---------- shell ---------- */
+main{margin-left:var(--rail);padding:0 0 90px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 34px}
+section{padding:52px 0 8px;scroll-margin-top:12px}
+section+section{border-top:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 8px}
+h2{font-size:30px;font-weight:800;margin:0 0 6px;line-height:1.14}
+h3{font-size:19.5px;font-weight:700;margin:34px 0 10px}
+h4{font-size:15px;font-weight:700;margin:22px 0 6px;color:var(--ink-2)}
+.lede{font-size:17.5px;color:var(--ink-2);margin:0 0 22px;max-width:66ch}
+p{margin:0 0 15px;max-width:74ch;text-wrap:pretty}
+a.link{color:#1B4FA8;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+
+/* ---------- hero ---------- */
+header.hero{background:linear-gradient(180deg,#0F1319 0%,#161C25 100%);color:#fff;padding:56px 0 0;position:relative;overflow:hidden}
+header.hero .wrap{position:relative;z-index:2}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#F0B429}
+header.hero h1{font-size:clamp(30px,4.4vw,50px);font-weight:800;line-height:1.02;margin:12px 0 14px;max-width:19ch;color:#fff}
+header.hero .sub{color:#9DA8B8;max-width:60ch;font-size:16.5px;margin-bottom:26px}
+.facts{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid #262E39;margin-top:8px}
+.fact{flex:1 1 150px;padding:15px 18px 17px;border-right:1px solid #262E39}
+.fact:last-child{border-right:0}
+.fact b{display:block;font-family:var(--mono);font-size:21px;color:#fff;font-weight:600}
+.fact span{font-family:var(--disp);font-size:11.5px;color:#818D9E;text-transform:uppercase;letter-spacing:.07em}
+
+/* ---------- dual rail timeline (signature) ---------- */
+.tl{background:#12171F;padding:30px 0 8px;margin-top:26px;border-top:1px solid #262E39}
+.tlgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;min-width:660px}
+.tlscroll{overflow-x:auto;padding-bottom:14px}
+.tlcol{padding:0 8px 12px;border-right:1px solid #222A35;position:relative}
+.tlcol:last-child{border-right:0}
+.tlyear{font-family:var(--mono);font-size:11px;color:#F0B429;letter-spacing:.05em;padding-bottom:12px}
+.lane{height:34px;margin-bottom:7px;position:relative;display:flex;align-items:center}
+.bar{width:100%;height:26px;border-radius:3px;display:flex;align-items:center;padding:0 9px;font-family:var(--disp);font-size:11.5px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;cursor:default;transition:transform .18s,filter .18s}
+.bar:hover{transform:translateY(-2px);filter:brightness(1.14)}
+.bar.ghost{background:transparent;border:1px dashed #333D4A;color:#67717F;font-weight:500}
+.lanelab{font-family:var(--mono);font-size:9.5px;color:#5E6A7C;text-transform:uppercase;letter-spacing:.09em;padding:2px 0 5px}
+.tlnote{font-family:var(--disp);font-size:12px;color:#7C8797;padding:6px 0 20px}
+.merge{position:absolute;top:0;bottom:14px;width:2px;background:linear-gradient(180deg,transparent,#F0B429,transparent);left:0}
+
+/* ---------- legend ---------- */
+.legend{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:16px 18px;margin:26px 0 4px}
+.legend h4{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-family:var(--mono);font-weight:500}
+.legrow{display:flex;flex-wrap:wrap;gap:7px 9px;margin-bottom:14px}
+.legrow:last-child{margin-bottom:0}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--disp);font-size:12.4px;font-weight:600;padding:4px 10px 4px 8px;border-radius:4px;border:1px solid}
+.dot{width:9px;height:9px;border-radius:2px;flex:none}
+.badge{display:inline-block;font-family:var(--mono);font-size:9.8px;letter-spacing:.06em;text-transform:uppercase;padding:2.5px 6px;border-radius:3px;background:#EEF1F6;color:#596373;border:1px solid #DEE4EC;white-space:nowrap;font-weight:500}
+.badge.prog{background:#E8F0FE;color:#1A4FA0;border-color:#CBDCF8}
+.badge.mat{background:#F0EBFB;color:#5B3FA8;border-color:#DED4F4}
+.badge.red{background:#E4F4F0;color:#12695A;border-color:#CBE7E0}
+.badge.seg{background:#FBE7E9;color:#A81F32;border-color:#F3CDD2}
+.badge.bd{background:#FEF0DC;color:#8C5A08;border-color:#F6DCB4}
+.badge.emp{background:#EDEFF2;color:#4E5766;border-color:#DCE1E8}
+.badge.sis{background:#E9F1EC;color:#2C6B44;border-color:#D2E4D8}
+
+/* ---------- institution styling ---------- */
+[data-i]{--c:var(--ink-2);--cbg:#F1F4F8}
+[data-i="dam"]{--c:var(--dam);--cbg:var(--dam-bg)}
+[data-i="uned"]{--c:var(--uned);--cbg:var(--uned-bg)}
+[data-i="uji"]{--c:var(--uji);--cbg:var(--uji-bg)}
+[data-i="uv"]{--c:var(--uv);--cbg:var(--uv-bg)}
+[data-i="upv"]{--c:var(--upv);--cbg:var(--upv-bg)}
+[data-i="eras"]{--c:var(--eras);--cbg:var(--eras-bg)}
+[data-i="mast"]{--c:var(--mast);--cbg:var(--mast-bg)}
+
+/* ---------- cards ---------- */
+.acc{border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--card);margin-bottom:8px;overflow:hidden}
+.acc>button{width:100%;display:flex;align-items:center;gap:11px;background:none;border:0;padding:12px 15px;text-align:left;cursor:pointer;font-family:var(--disp);font-size:15px;font-weight:600;color:var(--ink);transition:background .16s}
+.acc>button:hover{background:var(--cbg)}
+.acc>button:focus-visible{outline:2px solid var(--c);outline-offset:-2px}
+.acc .code{font-family:var(--mono);font-size:11px;color:var(--c);background:var(--cbg);padding:3px 6px;border-radius:3px;flex:none;font-weight:600}
+.acc .ttl{flex:1;line-height:1.3}
+.acc .meta{font-family:var(--mono);font-size:11px;color:var(--ink-3);flex:none}
+.acc .caret{flex:none;width:14px;height:14px;border-right:2px solid var(--ink-3);border-bottom:2px solid var(--ink-3);transform:rotate(45deg) translate(-3px,-3px);transition:transform .22s}
+.acc.open .caret{transform:rotate(-135deg) translate(-3px,-3px)}
+.acc .body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.acc.open .body{max-height:1400px}
+.acc .inner{padding:2px 16px 15px;border-top:1px solid var(--rule-2)}
+.acc .inner p{font-size:15.4px;margin:11px 0 0}
+.badges{display:flex;gap:5px;flex-wrap:wrap;padding:10px 0 0}
+
+/* ---------- tables ---------- */
+.tw{overflow-x:auto;margin:16px 0 20px;border:1px solid var(--rule);border-radius:7px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.2px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--rule-2);vertical-align:top}
+thead th{background:#F0F3F8;font-family:var(--disp);font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-2);font-weight:700;border-bottom:1px solid var(--rule);position:sticky;top:0}
+tbody tr{transition:background .14s}
+tbody tr:hover{background:#F7F9FC}
+tbody tr:last-child td{border-bottom:0}
+td.n,th.n{font-family:var(--mono);font-size:12.8px;font-variant-numeric:tabular-nums;white-space:nowrap}
+caption{caption-side:bottom;text-align:left;padding:9px 12px;font-size:12.4px;color:var(--ink-3);font-family:var(--disp);border-top:1px solid var(--rule-2)}
+.inst-tag{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:1px}
+
+/* ---------- callouts ---------- */
+.call{border-radius:7px;padding:15px 17px;margin:20px 0;border:1px solid;background:var(--cbg);border-color:color-mix(in srgb,var(--c) 30%,transparent)}
+.call h4{margin:0 0 7px;color:var(--c);font-size:14px;text-transform:uppercase;letter-spacing:.05em;font-family:var(--mono);font-weight:600}
+.call p{font-size:15.4px;margin:0 0 10px}
+.call p:last-child{margin-bottom:0}
+.warn{background:var(--warn-bg);border:1px solid var(--warn-line);border-left:4px solid var(--warn-line);border-radius:7px;padding:16px 18px;margin:22px 0}
+.warn h4{margin:0 0 8px;color:var(--warn);font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.warn p{margin:0 0 11px;font-size:15.6px}
+.warn p:last-child{margin-bottom:0}
+.unver{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;background:#FFF3D6;color:#8A5A00;border:1px solid #E8C97A;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:1px;font-weight:500}
+.rec{border-left:3px solid #F0B429;background:#FFFCF3;padding:13px 16px;margin:20px 0 6px;border-radius:0 6px 6px 0}
+.rec h4{margin:0 0 6px;font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:#8A5A00;font-weight:600}
+.rec p{margin:0 0 9px;font-size:15.5px}
+.rec p:last-child{margin-bottom:0}
+
+/* ---------- capacity gauge ---------- */
+.gauge{background:var(--card);border:1px solid var(--rule);border-radius:7px;padding:16px 18px;margin:18px 0}
+.grow{margin-bottom:14px}
+.grow:last-child{margin-bottom:0}
+.glab{display:flex;justify-content:space-between;font-family:var(--disp);font-size:12.8px;font-weight:600;margin-bottom:5px}
+.glab span:last-child{font-family:var(--mono);font-weight:500;color:var(--ink-3);font-size:11.8px}
+.gtrack{height:22px;background:#EDF1F6;border-radius:3px;display:flex;overflow:hidden}
+.gseg{height:100%;display:flex;align-items:center;padding-left:7px;font-family:var(--mono);font-size:10.5px;color:#fff;font-weight:500;overflow:hidden;white-space:nowrap}
+
+.foot{margin-left:var(--rail);background:#0F1319;color:#8C97A7;padding:30px 0 40px;font-size:13.4px}
+.foot .wrap{max-width:1020px}
+.foot b{color:#DDE3EC;font-family:var(--disp)}
+.foot a{color:#9FC2F5}
+
+@media(max-width:900px){
+  :root{--rail:0px}
+  #railToggle{display:flex;align-items:center;gap:8px;position:fixed;top:12px;left:12px;z-index:80;background:#0F1319;color:#fff;border:0;border-radius:6px;padding:9px 13px;font-family:var(--disp);font-weight:600;font-size:13px;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.28)}
+  #rail{transform:translateX(-100%);transition:transform .26s;width:280px}
+  #rail.show{transform:none}
+  main,.foot{margin-left:0}
+  .wrap{padding:0 18px}
+  header.hero{padding-top:64px}
+  h2{font-size:25px}
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+<button id="railToggle" aria-label="Abrir índice">☰ Índice</button>
+<nav id="rail" aria-label="Índice del informe">
+  <div class="brand"><b>Hoja de ruta académica</b><span>2026 → máster · Castellón</span></div>
+  <a href="#s0" class="on"><span class="n">00</span>Cómo leer esto</a>
+  <a href="#s1"><span class="n">01</span>Resumen ejecutivo</a>
+  <a href="#s2"><span class="n">02</span>DAM vs Ingeniería: solapamiento real</a>
+  <a href="#s3"><span class="n">03</span>DAM — 1º y 2º detallado</a>
+  <a href="#s4"><span class="n">04</span>Ingeniería Informática UNED</a>
+  <a href="#s5"><span class="n">05</span>Traslado: UJI vs UV vs UPV</a>
+  <a href="#s6"><span class="n">06</span>UJI — plan completo 4 años</a>
+  <a href="#s7"><span class="n">07</span>Erasmus en tu caso</a>
+  <a href="#s8"><span class="n">08</span>Máster: Valencia y Castellón</a>
+  <a href="#s9"><span class="n">09</span>Especialización y mercado</a>
+  <a href="#s10"><span class="n">10</span>Trabajar en 3º-4º</a>
+  <a href="#s11"><span class="n">11</span>Organización semanal</a>
+  <a href="#s12"><span class="n">12</span>Trámites y recursos</a>
+  <a href="#s13"><span class="n">13</span>Qué no he podido verificar</a>
+</nav>
+<main>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Informe de planificación · agosto 2026</div>
+    <h1>Dos titulaciones a la vez, y la aritmética que las sostiene</h1>
+    <p class="sub">DAM presencial en el IES El Caminàs y Grado en Ingeniería Informática por la UNED (Centro Asociado de Castellón, sede Vila-real), desde septiembre de 2026 hasta el máster. Construido sobre plan de estudios oficial, guía docente vigente y normativa publicada; lo que no he podido verificar está marcado como tal.</p>
+    <div class="facts">
+      <div class="fact"><b>2.000 h</b><span>DAM · 30 h/semana lectivas</span></div>
+      <div class="fact"><b>240 ECTS</b><span>Grado UNED</span></div>
+      <div class="fact"><b>36 ECTS</b><span>Reconocibles desde DAM</span></div>
+      <div class="fact"><b>≥30 ECTS</b><span>Mínimo legal para traslado</span></div>
+    </div>
+  </div>
+  <div class="tl">
+    <div class="wrap">
+      <div class="tlscroll">
+      <div class="tlgrid">
+        <div class="tlcol"><div class="tlyear">2026-27</div>
+          <div class="lanelab">FP presencial</div>
+          <div class="lane"><div class="bar" style="background:var(--dam)">DAM 1º · El Caminàs</div></div>
+          <div class="lanelab">Universidad</div>
+          <div class="lane"><div class="bar" style="background:var(--uned)">UNED 1º · Vila-real</div></div>
+        </div>
+        <div class="tlcol"><div class="tlyear">2027-28</div>
+          <div class="lanelab">FP presencial</div>
+          <div class="lane"><div class="bar" style="background:var(--dam)">DAM 2º + empresa</div></div>
+          <div class="lanelab">Universidad</div>
+          <div class="lane"><div class="bar" style="background:var(--uned)">UNED 2º</div></div>
+        </div>
+        <div class="tlcol"><div class="merge"></div><div class="tlyear">2028-29</div>
+          <div class="lanelab">Título obtenido</div>
+          <div class="lane"><div class="bar ghost">Técnico Superior DAM ✓</div></div>
+          <div class="lanelab">Universidad</div>
+          <div class="lane"><div class="bar" style="background:var(--uji)">Traslado → 3º presencial</div></div>
+        </div>
+        <div class="tlcol"><div class="tlyear">2029-30</div>
+          <div class="lanelab">Movilidad</div>
+          <div class="lane"><div class="bar" style="background:var(--eras)">Erasmus (3º o 4º)</div></div>
+          <div class="lanelab">Universidad</div>
+          <div class="lane"><div class="bar" style="background:var(--uji)">4º + prácticas + TFG</div></div>
+        </div>
+        <div class="tlcol"><div class="tlyear">2030-31</div>
+          <div class="lanelab">Margen realista</div>
+          <div class="lane"><div class="bar ghost">Créditos pendientes</div></div>
+          <div class="lanelab">Universidad</div>
+          <div class="lane"><div class="bar" style="background:var(--uji)">Cierre del grado</div></div>
+        </div>
+        <div class="tlcol"><div class="tlyear">2031-32</div>
+          <div class="lanelab">Posgrado</div>
+          <div class="lane"><div class="bar" style="background:var(--mast)">Máster ciberseguridad</div></div>
+          <div class="lanelab">&nbsp;</div>
+          <div class="lane"><div class="bar ghost">TFM</div></div>
+        </div>
+      </div>
+      </div>
+      <div class="tlnote">Los dos carriles corren en paralelo hasta 2028, cuando el carril de FP se cierra con el título y libera toda tu capacidad hacia el universitario. La línea amarilla marca ese punto de confluencia: es donde se decide el traslado y donde se activa el reconocimiento de 36 ECTS.</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="legend">
+  <h4>Leyenda de color — institución y etapa</h4>
+  <div class="legrow">
+    <span class="chip" style="color:var(--dam);background:var(--dam-bg);border-color:var(--dam)"><i class="dot" style="background:var(--dam)"></i>DAM · El Caminàs</span>
+    <span class="chip" style="color:var(--uned);background:var(--uned-bg);border-color:var(--uned)"><i class="dot" style="background:var(--uned)"></i>UNED</span>
+    <span class="chip" style="color:var(--uji);background:var(--uji-bg);border-color:var(--uji)"><i class="dot" style="background:var(--uji)"></i>UJI</span>
+    <span class="chip" style="color:var(--uv);background:var(--uv-bg);border-color:var(--uv)"><i class="dot" style="background:var(--uv)"></i>UV</span>
+    <span class="chip" style="color:var(--upv);background:var(--upv-bg);border-color:var(--upv)"><i class="dot" style="background:var(--upv)"></i>UPV</span>
+    <span class="chip" style="color:var(--eras);background:var(--eras-bg);border-color:var(--eras)"><i class="dot" style="background:var(--eras)"></i>Erasmus</span>
+    <span class="chip" style="color:var(--mast);background:var(--mast-bg);border-color:var(--mast)"><i class="dot" style="background:var(--mast)"></i>Máster</span>
+  </div>
+  <h4>Leyenda de área temática — sirve para emparejar asignaturas afines entre titulaciones distintas</h4>
+  <div class="legrow">
+    <span class="badge prog">Programación</span><span class="badge mat">Matemáticas</span><span class="badge red">Redes</span>
+    <span class="badge seg">Seguridad</span><span class="badge bd">Bases de datos</span><span class="badge sis">Sistemas</span><span class="badge emp">Empresa</span>
+  </div>
+</div>
+</div>
+
+<section id="s0"><div class="wrap">
+<div class="eyebrow">00 · Antes de nada</div>
+<h2>Cómo leer esto</h2>
+<p class="lede">Hay un problema aritmético en el planteamiento de partida y prefiero ponerlo delante en vez de esconderlo en el punto 11.</p>
+<p>El resto del informe está construido sobre datos que he verificado uno a uno: la tabla horaria real de DAM publicada por el IES El Caminàs bajo el nuevo modelo LFP, el plan de estudios 2026/2027 del grado 7101 de la UNED con sus códigos de asignatura, la tabla oficial de reconocimiento de créditos desde títulos de Técnico Superior, el nuevo plan P26 del grado en Enginyeria Informàtica de la UJI que se implanta este mismo curso, y la normativa de cabinas de la biblioteca de la UJI. Donde el dato no existe públicamente o cambia según el año, lo digo con la etiqueta <span class="unver">no verificado</span> en lugar de rellenarlo.</p>
+
+<div class="warn">
+<h4>El punto que condiciona todo lo demás</h4>
+<p>Cursar el 100% de DAM y el 100% del grado <em>simultáneamente</em>, con 2-3 h diarias de estudio, no cuadra. No es una cuestión de esfuerzo ni de capacidad: es una cuestión de horas disponibles frente a horas contratadas, y el desajuste es de más del doble.</p>
+<p>DAM en El Caminàs son <strong>30 horas lectivas semanales</strong> de asistencia obligatoria, según la tabla oficial del centro. El grado de la UNED asigna <strong>60 ECTS por curso</strong>, y un ECTS son 25 horas de trabajo del estudiante: 1.500 horas anuales, unas <strong>33-37 h/semana</strong>. Sumadas, son unas 63-67 h semanales de dedicación formal. Tu disponibilidad declarada de 2-3 h diarias son 14-21 h semanales de estudio autónomo, de las cuales DAM ya se lleva una parte en trabajos y proyectos.</p>
+<p>Esto no invalida el plan: lo reencuadra. La conclusión operativa es que <strong>el grado de la UNED debe cursarse a 24-30 ECTS por año durante 2026-2028</strong>, no a 60, y que la carrera terminará hacia 2030-2031 en vez de 2030. Sigues acabando con dos titulaciones a una edad en la que la mayoría tiene una. El punto 11 desarrolla la aritmética completa y el punto 2 explica por qué el reconocimiento de créditos recorta parte de esa diferencia.</p>
+</div>
+<div class="rec">
+<h4>Recomendación de este bloque</h4>
+<p>Antes de matricularte en la UNED en septiembre, lee el punto 2 completo. Hay cuatro asignaturas concretas del grado que <strong>no debes matricular nunca</strong>, porque el título de DAM te las va a dar reconocidas en 2028. Matricularlas sería pagar y estudiar dos veces lo mismo.</p>
+</div>
+</div></section>
+
+<section id="s1"><div class="wrap">
+<div class="eyebrow">01 · Vista rápida</div>
+<h2>Resumen ejecutivo</h2>
+<p class="lede">La cronología completa sin desarrollar contenido: solo para situarte y para que veas dónde están los puntos de decisión.</p>
+<div class="tw">
+<table>
+<thead><tr><th class="n">Curso</th><th>Etapa</th><th>Qué haces</th><th>Decisión o trámite del año</th></tr></thead>
+<tbody>
+<tr><td class="n">2026-27</td><td><span class="inst-tag" style="background:var(--dam)"></span>DAM 1º <span class="inst-tag" style="background:var(--uned)"></span>UNED 1º</td><td>30 h/sem presenciales de mañana en El Caminàs; UNED por las tardes con tutorías en Vila-real de lunes a jueves de 17 a 22 h.</td><td>Matrícula doble en julio-octubre. Elegir carga UNED realista y evitar las 4 asignaturas reconocibles.</td></tr>
+<tr><td class="n">2027-28</td><td><span class="inst-tag" style="background:var(--dam)"></span>DAM 2º <span class="inst-tag" style="background:var(--uned)"></span>UNED 2º</td><td>Segundo curso de DAM más la estancia de formación en empresa del modelo dual. Se cierra el ciclo y se obtiene el título de Técnico Superior.</td><td>Confirmar con el centro el calendario de la fase en empresa: es el trimestre que más comprime el estudio de la UNED.</td></tr>
+<tr><td class="n">2028-29</td><td><span class="inst-tag" style="background:var(--uji)"></span>3º presencial</td><td>Con el título de DAM en la mano, se solicita el reconocimiento de 36 ECTS y el traslado a universidad presencial.</td><td><strong>Decisión de destino</strong>: UJI, UV o UPV. Solicitud entre febrero y abril de 2028 aproximadamente <span class="unver">plazo por confirmar</span>.</td></tr>
+<tr><td class="n">2029-30</td><td><span class="inst-tag" style="background:var(--uji)"></span>4º <span class="inst-tag" style="background:var(--eras)"></span>Erasmus</td><td>Año de mención o itinerario, prácticas externas y TFG. Ventana natural del Erasmus.</td><td>Solicitud de mención (plazas limitadas por expediente) y convocatoria de movilidad, que se resuelve el curso anterior.</td></tr>
+<tr><td class="n">2030-31</td><td><span class="inst-tag" style="background:var(--uji)"></span>Cierre</td><td>Curso de margen para los créditos que la carga doble de 1º-2º haya dejado atrás. En la práctica es el año que hace viable todo lo anterior.</td><td>Preinscripción de máster en primavera de 2031.</td></tr>
+<tr><td class="n">2031-32</td><td><span class="inst-tag" style="background:var(--mast)"></span>Máster</td><td>Máster universitario en ciberseguridad o en ingeniería informática, 60-90 ECTS.</td><td>Elección entre continuidad en la misma universidad o cambio.</td></tr>
+</tbody>
+</table>
+<caption>Cronología de referencia. El curso 2030-31 no es un retraso: es la consecuencia aritmética de haber cursado dos titulaciones en paralelo durante los dos primeros años.</caption>
+</div>
+</div></section>
+
+<section id="s2"><div class="wrap">
+<div class="eyebrow">02 · El dato más rentable del informe</div>
+<h2>DAM vs Ingeniería Informática: solapamiento y reconocimiento real</h2>
+<p class="lede">No es una impresión sobre "temas que suenan parecidos": existe una tabla oficial firmada que dice exactamente qué te dan por tener el título de DAM.</p>
+
+<h3>Qué reconoce la UNED, en concreto</h3>
+<p>La Escuela Técnica Superior de Ingeniería Informática de la UNED publica una tabla de reconocimiento de créditos desde títulos de educación superior no universitaria, amparada en el R.D. 659/2023 de ordenación del sistema de Formación Profesional. Para el Técnico Superior en Desarrollo de Aplicaciones Multiplataforma, la tabla reconoce cuatro asignaturas completas más optatividad: <strong>Fundamentos de Programación</strong>, <strong>Programación Orientada a Objetos</strong>, <strong>Bases de Datos</strong>, <strong>Sistemas Operativos</strong> y <strong>12 créditos de optatividad</strong>. Son 36 ECTS sobre 240, un 15% del grado, y no son cuatro asignaturas cualesquiera: dos de ellas son de primer curso, una de segundo cuatrimestre de segundo y la optatividad reconocida cubre la mitad de los 24 ECTS optativos que exige el plan.</p>
+<p>La consecuencia práctica es incómoda pero clara. El reconocimiento se solicita <em>con el título ya obtenido</em>, es decir en el verano de 2028. Si durante 2026-2028 te matriculas de esas cuatro asignaturas, las pagas, las estudias y las apruebas, y después el reconocimiento no te devuelve ni el dinero ni el tiempo. Son exactamente las asignaturas donde más solapamiento tienes y donde, por tanto, más fácil te resultaría aprobar: la tentación es alta y el coste de caer en ella es de un cuatrimestre entero de trabajo.</p>
+
+<div class="call" data-i="uned">
+<h4>Traducción operativa</h4>
+<p>De los 60 ECTS de primer curso de la UNED, 12 están reconocidos vía DAM (Fundamentos de Programación y Programación Orientada a Objetos). De los 60 de segundo, otros 12 (Sistemas Operativos y Bases de Datos). Los 12 restantes son optatividad de 3º-4º. Tu primer curso "real" en la UNED son <strong>48 ECTS</strong>, no 60, y eso encaja mucho mejor con la capacidad que tienes.</p>
+</div>
+
+<div class="warn">
+<h4>Advertencia sobre esa tabla</h4>
+<p>La tabla identifica el título de DAM por su currículo publicado en el <strong>BOE de 26 de julio de 2010</strong>, es decir el título LOE. Tú vas a titularte por el nuevo modelo LFP (Ley Orgánica 3/2022), con módulos reorganizados, proyecto intermodular y formación en empresa integrada. El título sigue llamándose igual y la equivalencia formativa se mantiene, pero <strong>no puedo confirmar que la tabla se haya actualizado</strong> al nuevo currículo ni cómo se resolverá en 2028 <span class="unver">no verificado</span>. Es una pregunta concreta que conviene hacer por escrito a la secretaría de la ETSI de Informática de la UNED durante 2027, no en 2028.</p>
+</div>
+
+<h3>Dónde se solapan de verdad, asignatura por asignatura</h3>
+<p>El solapamiento es real en programación y bases de datos, y es engañoso en todo lo demás. En programación, el módulo <em>Programación</em> de DAM son 256 horas en primer curso, ocho horas semanales, con un enfoque orientado a objetos sobre Java: tipos, estructuras de control, clases, herencia, colecciones, excepciones y ficheros. Las dos asignaturas equivalentes de la UNED, <em>Fundamentos de Programación</em> y <em>Programación Orientada a Objetos</em>, son 12 ECTS —unas 300 horas de trabajo— y cubren un territorio parecido pero con un peso mucho mayor en la corrección formal, la abstracción de tipos y el razonamiento sobre invariantes; la UNED, además, exige prácticas experimentales evaluadas en el Centro Asociado en Programación Orientada a Objetos. DAM te da fluidez y volumen de código; la UNED te da el vocabulario para justificar por qué ese código es correcto.</p>
+<p>En bases de datos el solapamiento es todavía más limpio. <em>Bases de Datos</em> de DAM son 160 horas de primer curso más <em>Acceso a Datos</em> en segundo con 128 horas: modelo entidad-relación, normalización, SQL, y después conectividad desde código con JDBC y mapeo objeto-relacional. La asignatura <em>Bases de Datos</em> de la UNED, de segundo curso y segundo cuatrimestre, es la misma materia con el álgebra relacional y la teoría de la normalización tratadas como objeto de estudio en sí mismas, y se prolonga en <em>Sistemas de Bases de Datos</em> en tercero, que ya no tiene contrapartida en el ciclo. Aquí DAM es más ancho en herramientas y la UNED más profunda en fundamento.</p>
+<p>En sistemas la diferencia de nivel es la mayor de todas y conviene no confiarse. <em>Sistemas Informáticos</em> de DAM son 160 horas de instalación, configuración y administración de Windows y Linux, redes básicas y virtualización: trabajo de administrador. <em>Sistemas Operativos</em> de la UNED es un curso de planificación de procesos, gestión de memoria virtual, sincronización y sistemas de ficheros desde dentro del núcleo. Que la tabla reconozca uno por otro es una decisión administrativa razonable en términos de carga, pero significa que vas a <strong>saltarte</strong> el contenido de sistemas operativos tal y como lo entiende una ingeniería, y ese contenido es precisamente el que sostiene <em>Diseño y Administración de Sistemas Operativos</em> de tercero y buena parte de la seguridad. Si tu objetivo final es ciberseguridad, esta es la laguna que tendrás que cerrar por tu cuenta aunque el expediente diga que está superada.</p>
+<p>Donde no hay solapamiento alguno es en el bloque científico, y es exactamente el bloque que más tiempo te va a costar. <em>Fundamentos Matemáticos de la Informática</em>, <em>Lógica y Estructuras Discretas</em>, <em>Estadística</em>, <em>Fundamentos Físicos de la Informática</em> y las tres <em>Ingeniería de Computadores</em> no tienen ni un módulo equivalente en DAM. La propia UNED lo reconoce en su perfil de ingreso: advierte que el alumnado procedente de ciclos formativos de informática "probablemente requerirá un esfuerzo extra en las asignaturas de fundamentos científicos" y recomienda hacer los cursos cero de Física y Matemáticas, que son gratuitos y de acceso libre. En tu caso concreto vienes de Bachillerato científico con dibujo técnico, así que partes mejor que el perfil típico de FP, pero el aviso sigue siendo válido para Física.</p>
+
+<div class="tw">
+<table>
+<thead><tr><th>Contenido</th><th>En DAM</th><th class="n">Horas</th><th>En el grado UNED</th><th class="n">ECTS</th><th>Relación real</th></tr></thead>
+<tbody>
+<tr><td>Programación OO</td><td>Programación</td><td class="n">256</td><td>Fund. Programación + POO</td><td class="n">12</td><td><strong>Reconocido.</strong> DAM más práctico, UNED más formal</td></tr>
+<tr><td>Bases de datos</td><td>Bases de Datos + Acceso a Datos</td><td class="n">288</td><td>Bases de Datos</td><td class="n">6</td><td><strong>Reconocido.</strong> Solapamiento alto y limpio</td></tr>
+<tr><td>Sistemas</td><td>Sistemas Informáticos</td><td class="n">160</td><td>Sistemas Operativos</td><td class="n">6</td><td><strong>Reconocido</strong>, pero el nivel no es equivalente</td></tr>
+<tr><td>Ingeniería del software</td><td>Entornos de Desarrollo + Proy. intermodular</td><td class="n">256</td><td>Intr. Ing. Software; Diseño del Software</td><td class="n">12</td><td>Parcial. No reconocido para DAM</td></tr>
+<tr><td>Concurrencia y red</td><td>Prog. de Servicios y Procesos</td><td class="n">192</td><td>Redes de Computadores; Sist. Distribuidos</td><td class="n">12</td><td>Parcial. DAM usa la API, UNED estudia el protocolo</td></tr>
+<tr><td>Empresa</td><td>Sistemas de Gestión Empresarial</td><td class="n">128</td><td>Gestión de Empresas Informáticas</td><td class="n">6</td><td>Bajo. DAM implanta ERP, UNED es economía de empresa</td></tr>
+<tr><td>Matemáticas y física</td><td>—</td><td class="n">0</td><td>F. Matemáticos, Lógica, Estadística, F. Físicos</td><td class="n">24</td><td><strong>Sin solapamiento.</strong> Tu mayor carga real de 1º</td></tr>
+<tr><td>Arquitectura</td><td>—</td><td class="n">0</td><td>F. Sistemas Digitales + Ing. Computadores I-III</td><td class="n">24</td><td><strong>Sin solapamiento.</strong> Bloque duro de 1º-2º</td></tr>
+</tbody>
+</table>
+<caption>Horas de DAM según la tabla publicada por el IES El Caminàs; ECTS y ubicación según el plan 7101 de la UNED, curso 2026/2027. La columna "relación real" es mi lectura del contenido, no una equivalencia oficial: solo las tres primeras filas están en la tabla de reconocimiento.</caption>
+</div>
+
+<div class="rec">
+<h4>Recomendaciones de este bloque</h4>
+<p>Matricúlate en la UNED evitando Fundamentos de Programación, Programación Orientada a Objetos, Sistemas Operativos y Bases de Datos, y reserva 12 ECTS de optatividad de 3º-4º sin cursar. Concentra 2026-2028 en el bloque que DAM no toca: matemáticas, lógica, estadística, física e ingeniería de computadores. Es lo más difícil y lo que más agradece tener dos años en vez de uno.</p>
+<p>Pide por escrito a la ETSI de Informática de la UNED, durante 2027, confirmación de que la tabla de reconocimiento aplicará al título de DAM emitido bajo el modelo LFP. Guarda la respuesta: en 2028 vale más que cualquier interpretación.</p>
+<p>Aunque Sistemas Operativos te salga reconocida, estudia el temario por tu cuenta antes de llegar a tercero. Es el prerrequisito real de la asignatura de Seguridad y del máster que quieres hacer.</p>
+</div>
+</div></section>
+<section id="s3"><div class="wrap">
+<div class="eyebrow">03 · Formación Profesional</div>
+<h2>DAM — primer y segundo curso, detallado</h2>
+<p class="lede">Módulos y distribución horaria reales del IES El Caminàs bajo el nuevo modelo LFP, no del currículo genérico estatal.</p>
+<p>El centro publica la tabla del ciclo en su página de la familia de Informática y Comunicaciones, ya adaptada a la Ley de Formación Profesional: <strong>30 horas semanales en cada curso y 2.000 horas de ciclo</strong>. La diferencia más importante frente al modelo anterior no está en los nombres de los módulos sino en dos piezas nuevas: el <em>Proyecto intermodular</em>, que sustituye al antiguo proyecto final y aparece ya en primer curso con una hora semanal, y la desaparición de la FCT como módulo independiente. Las prácticas ya no son un bloque al final: la formación en empresa se integra dentro de los módulos asociados a estándares de competencia, con un <strong>mínimo de 500 horas</strong> en régimen general repartidas entre los dos cursos, lo que equivale al 25% del ciclo.</p>
+
+<div class="warn">
+<h4>Esto te afecta más que a nadie</h4>
+<p>Un estudiante normal de DAM vive la formación en empresa como una ventaja: cobra experiencia y le cuesta poco. En tu caso son entre 500 y 800 horas de presencia en empresa que caen dentro del mismo periodo en el que tienes que estar preparando exámenes de la UNED, y que además pueden ocupar jornada completa durante semanas seguidas. El reparto exacto por trimestres <strong>lo decide cada centro</strong> y no está publicado en la web de El Caminàs <span class="unver">no verificado</span>. Pregúntalo en secretaría antes de decidir la carga UNED de segundo curso, no después.</p>
+</div>
+
+<h3>Primer curso · 30 h semanales</h3>
+<div class="acc" data-i="dam"><button><span class="code">8 h/sem</span><span class="ttl">Programación</span><span class="meta">256 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>El módulo troncal del ciclo y el que más horas concentra de todo primer curso. Se construye desde cero el lenguaje orientado a objetos —en la práctica totalidad de los centros, Java— pasando por tipos, estructuras de control, arrays y colecciones, clases, herencia, polimorfismo, interfaces, gestión de excepciones y entrada/salida sobre ficheros, incluidos XML y JSON. Los proyectos típicos son aplicaciones de consola que evolucionan durante el curso hacia gestores con persistencia en fichero y, al final, contra base de datos.</p>
+<p>Es tu asignatura de menor riesgo académico y la que más te conviene aprovechar en dirección contraria a lo obvio: como el contenido lo vas a tener reconocido en la UNED, el valor que te aporta no es el crédito sino la velocidad de escritura de código, que es exactamente lo que la UNED no te va a entrenar.</p>
+<div class="badges"><span class="badge prog">Programación</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">5 h/sem</span><span class="ttl">Bases de Datos</span><span class="meta">160 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Modelo entidad-relación, paso a modelo relacional, normalización hasta tercera forma normal y SQL completo: definición, manipulación, consultas con agregación y subconsultas, vistas, procedimientos y disparadores. El gestor habitual es MySQL o MariaDB, con incursiones en PostgreSQL y, cada vez más, en algún gestor documental tipo MongoDB para contrastar paradigmas. El proyecto típico es el diseño e implementación completa del esquema de un caso de negocio.</p>
+<div class="badges"><span class="badge bd">Bases de datos</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">5 h/sem</span><span class="ttl">Sistemas Informáticos</span><span class="meta">160 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Hardware, instalación y administración de sistemas operativos libres y propietarios, gestión de usuarios y permisos, scripting de shell, virtualización con VirtualBox o VMware y fundamentos de red: direccionamiento IP, servicios básicos y configuración de un pequeño entorno cliente-servidor. Es administración de sistemas de nivel de usuario avanzado, no diseño de sistemas.</p>
+<p>Este es el módulo que te dará el reconocimiento de <em>Sistemas Operativos</em> en la UNED, y por eso conviene que sepas desde ahora que la equivalencia es de carga, no de profundidad. Ver el punto 2.</p>
+<div class="badges"><span class="badge sis">Sistemas</span><span class="badge red">Redes</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">3 h/sem</span><span class="ttl">Lenguajes de Marcas y Sistemas de Gestión de Información</span><span class="meta">96 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>HTML y CSS como base, y sobre todo XML y JSON como formatos de intercambio: esquemas XSD, transformaciones XSLT, consultas XPath, y el uso de estos formatos para configuración y serialización. Cierra con una introducción a sistemas de gestión empresarial y gestores documentales. Es el módulo que hace de puente entre la programación y el mundo web.</p>
+<div class="badges"><span class="badge prog">Programación</span><span class="badge bd">Bases de datos</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">3 h/sem</span><span class="ttl">Entornos de Desarrollo</span><span class="meta">96 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>El módulo metodológico: instalación y uso de IDEs, depuración, refactorización, pruebas unitarias con JUnit, control de versiones con Git y modelado con UML —diagramas de clases, casos de uso, secuencia—. Se estudian también los ciclos de vida del software a nivel introductorio.</p>
+<p>Es el módulo con más rentabilidad indirecta para ti: Git y las pruebas unitarias son las dos herramientas que te van a permitir sobrevivir a las prácticas experimentales evaluables de la UNED sin perder trabajo.</p>
+<div class="badges"><span class="badge prog">Programación</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">3 h/sem</span><span class="ttl">Itinerario Personal para la Empleabilidad I</span><span class="meta">96 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Módulo transversal del nuevo modelo LFP que absorbe lo que antes eran FOL y parte de EIE: prevención de riesgos laborales —requisito previo para poder incorporarte a la empresa—, derecho laboral, contratación, seguridad social, autoconocimiento profesional y competencias digitales. La formación en PRL es la que habilita legalmente la fase de empresa, así que no es un trámite.</p>
+<div class="badges"><span class="badge emp">Empresa</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">2 h/sem</span><span class="ttl">Inglés Profesional (GS)</span><span class="meta">64 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Inglés técnico aplicado al sector: lectura de documentación, terminología de desarrollo, comunicación escrita profesional. Poca carga, pero conviene tomárselo como el primer peldaño del B1-B2 que después te exigirán tanto la UNED para el título como cualquier convocatoria Erasmus.</p>
+<div class="badges"><span class="badge emp">Empresa</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">1 h/sem</span><span class="ttl">Proyecto Intermodular</span><span class="meta">32 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Novedad del modelo LFP. Un proyecto que atraviesa varios módulos y se evalúa de forma integrada, arrancando ya en primer curso con carga ligera para continuar con mucho más peso en segundo. La lógica es que dejes de resolver ejercicios por módulo y empieces a producir un artefacto completo.</p>
+<div class="badges"><span class="badge prog">Programación</span></div>
+</div></div></div>
+
+<h3>Segundo curso · 30 h semanales</h3>
+<div class="acc" data-i="dam"><button><span class="code">7 h/sem</span><span class="ttl">Programación Multimedia y Dispositivos Móviles</span><span class="meta">224 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>El módulo con más horas de segundo. Desarrollo nativo para Android —actividades, ciclo de vida, interfaces, persistencia local, consumo de servicios REST— y, según el centro, alguna aproximación a multiplataforma o a desarrollo de videojuegos con motores 2D. El proyecto típico es una app conectada a un backend propio.</p>
+<div class="badges"><span class="badge prog">Programación</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">6 h/sem</span><span class="ttl">Programación de Servicios y Procesos</span><span class="meta">192 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Programación concurrente con hilos, sincronización, procesos, comunicación en red con sockets TCP y UDP, servicios en segundo plano y una parte final de seguridad: criptografía simétrica y asimétrica aplicada, firma digital, certificados y comunicación cifrada con SSL/TLS.</p>
+<p>Es, con diferencia, el módulo de DAM más cercano a tu objetivo de ciberseguridad y el que mejor conecta con <em>Redes de Computadores</em> y <em>Seguridad</em> de la UNED. Si en algún módulo del ciclo vale la pena ir más allá del aprobado, es en este.</p>
+<div class="badges"><span class="badge prog">Programación</span><span class="badge red">Redes</span><span class="badge seg">Seguridad</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">5 h/sem</span><span class="ttl">Desarrollo de Interfaces</span><span class="meta">160 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Construcción de interfaces gráficas de escritorio, habitualmente con JavaFX, patrones de separación tipo MVC, usabilidad y accesibilidad, generación de informes y documentación, y empaquetado y distribución de la aplicación. Incluye pruebas de interfaz y despliegue de instaladores.</p>
+<div class="badges"><span class="badge prog">Programación</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">4 h/sem</span><span class="ttl">Acceso a Datos</span><span class="meta">128 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Conectividad desde el código: JDBC contra bases relacionales, mapeo objeto-relacional con Hibernate o JPA, acceso a bases de datos objeto-relacionales y documentales, y persistencia en XML. Es la continuación natural de Bases de Datos de primero y el módulo que convierte el esquema en una aplicación real.</p>
+<div class="badges"><span class="badge bd">Bases de datos</span><span class="badge prog">Programación</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">4 h/sem</span><span class="ttl">Sistemas de Gestión Empresarial</span><span class="meta">128 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Instalación, configuración, adaptación y explotación de sistemas ERP y CRM —Odoo es lo más habitual en centros públicos, a veces SAP o Dynamics—, incluyendo desarrollo de módulos propios y extracción de informes. Es el módulo menos técnico del ciclo y el más orientado al perfil de consultoría.</p>
+<div class="badges"><span class="badge emp">Empresa</span><span class="badge bd">Bases de datos</span></div>
+</div></div></div>
+<div class="acc" data-i="dam"><button><span class="code">4 h/sem</span><span class="ttl">Proyecto Intermodular</span><span class="meta">128 h</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>El proyecto final del ciclo, ahora con cuatro horas semanales. Desarrollo completo de una aplicación multiplataforma con memoria y defensa: análisis, diseño, implementación, pruebas y despliegue. Se evalúa de forma integrada con el resto de módulos y con la fase de empresa.</p>
+<p>Es la pieza que puedes hacer trabajar dos veces: si eliges un proyecto con componente de seguridad —autenticación robusta, cifrado de datos en reposo, auditoría de accesos— te sirve como primer elemento de portafolio para el perfil que quieres construir.</p>
+<div class="badges"><span class="badge prog">Programación</span><span class="badge seg">Seguridad</span></div>
+</div></div></div>
+
+<div class="warn">
+<h4>Una discrepancia en la tabla del centro</h4>
+<p>La tabla publicada por El Caminàs suma 30 h en cada curso de DAM, pero en segundo no aparecen <em>Itinerario Personal para la Empleabilidad II</em>, <em>Digitalización aplicada al sistema productivo</em>, <em>Sostenibilidad aplicada al sistema productivo</em> ni la optativa, módulos que sí figuran en los ciclos hermanos de DAW y ASIR del mismo centro. Es probable que sea una omisión de la tabla y no del plan real <span class="unver">no verificado</span>. Confírmalo en la matrícula: cambia poco en horas totales pero cambia el reparto de tu segundo curso.</p>
+</div>
+
+<div class="rec">
+<h4>Recomendaciones de este bloque</h4>
+<p>El horario de mañana de El Caminàs no está publicado en su web; los ciclos de grado superior en la Comunitat Valenciana suelen ir de 8:00 a 14:20 aproximadamente <span class="unver">no verificado</span>. Confírmalo el primer día, porque de él depende si tu bloque de estudio de la UNED empieza a las 16:00 o a las 15:00, y esa hora es un 20% de tu capacidad diaria.</p>
+<p>Pregunta en secretaría, en septiembre de 2026, en qué trimestre de segundo curso se concentra la formación en empresa. Es el único dato que puede obligarte a bajar la matrícula de la UNED de 2027-28 a mínimos.</p>
+</div>
+</div></section>
+
+<section id="s4"><div class="wrap">
+<div class="eyebrow">04 · Universidad</div>
+<h2>Ingeniería Informática UNED — los cuatro años</h2>
+<p class="lede">Plan 7101, curso 2026/2027, con los códigos oficiales de asignatura. Primero y segundo con detalle; tercero y cuarto agrupados.</p>
+<p>Antes del detalle, una corrección de premisa que condiciona el punto 5 y el punto 9. Una ingeniería informática típica se organiza en menciones —computación, ingeniería de computadores, ingeniería del software, tecnologías de la información— y el estudiante elige una en tercero. <strong>El grado de la UNED no tiene menciones.</strong> Es un itinerario único que la propia Escuela orienta hacia el perfil de <em>Computación</em> según la Resolución de 8 de junio de 2009, con refuerzos en ingeniería de computadores e ingeniería del software, y una optatividad de 24 ECTS que no forma bloques cerrados. La pregunta "qué mención de la UNED conviene para ciberseguridad" no tiene respuesta porque no hay menciones que elegir; la pregunta útil es qué optativas escoger, y esa sí la respondo abajo.</p>
+
+<h3>Primer curso · 60 ECTS</h3>
+<h4>Primer cuatrimestre</h4>
+<div class="acc" data-i="uned"><button><span class="code">7101102-</span><span class="ttl">Fundamentos Matemáticos de la Informática</span><span class="meta">6 ECTS · Básica</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Álgebra lineal y cálculo orientados a la computación: espacios vectoriales, matrices, determinantes, sistemas de ecuaciones, diagonalización, y una parte de cálculo diferencial e integral con aplicación a métodos numéricos. Es prerrequisito explícito de Estadística.</p>
+<p>Con Bachillerato científico reciente partes bien, pero el examen de la UNED es notablemente más formal que el de la PAU: se pide demostración, no solo cálculo.</p>
+<div class="badges"><span class="badge mat">Matemáticas</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71901037</span><span class="ttl">Lógica y Estructuras Discretas</span><span class="meta">6 ECTS · Básica</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Lógica proposicional y de predicados, deducción natural, resolución, teoría de conjuntos, relaciones y funciones, inducción y recursión, combinatoria, grafos y árboles. Es la asignatura que sostiene después <em>Autómatas, Gramáticas y Lenguajes</em>, <em>Complejidad y Computabilidad</em> y toda la criptografía.</p>
+<p>Es la que mejor encaja con tu perfil declarado y una de las pocas que puedes atacar sin depender de material adicional. Priorízala en el primer cuatrimestre.</p>
+<div class="badges"><span class="badge mat">Matemáticas</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71901014</span><span class="ttl">Fundamentos de Sistemas Digitales</span><span class="meta">6 ECTS · Básica</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Sistemas de numeración y representación de la información, álgebra de Boole, simplificación de funciones lógicas, diseño de circuitos combinacionales y secuenciales, biestables, registros, contadores y máquinas de estados finitos. Es el requisito recomendado de <em>Ingeniería de Computadores I</em>.</p>
+<div class="badges"><span class="badge sis">Sistemas</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71011013</span><span class="ttl">Fundamentos Físicos de la Informática</span><span class="meta">6 ECTS · Básica</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Electromagnetismo, teoría de circuitos, componentes electrónicos y semiconductores, y su aplicación a la electrónica digital. Es la asignatura por la que la UNED recomienda expresamente el curso cero de Física a quien no venga de Bachillerato científico.</p>
+<p>Sin solapamiento alguno con DAM y sin continuidad evidente en el resto del grado: por eso es fácil dejarla para el final, y por eso conviene no hacerlo.</p>
+<div class="badges"><span class="badge mat">Matemáticas</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71901020</span><span class="ttl">Fundamentos de Programación</span><span class="meta">6 ECTS · Básica</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p><strong>Reconocible desde DAM. No la matricules.</strong> Introducción a la programación estructurada, tipos, control de flujo, subprogramas, recursión y estructuras de datos elementales.</p>
+<div class="badges"><span class="badge prog">Programación</span></div>
+</div></div></div>
+<h4>Segundo cuatrimestre</h4>
+<div class="acc" data-i="uned"><button><span class="code">7190105-</span><span class="ttl">Estadística</span><span class="meta">6 ECTS · Básica</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Probabilidad, variables aleatorias, distribuciones discretas y continuas, estimación, contrastes de hipótesis y análisis de datos. La guía docente advierte que es muy importante haber cursado antes Fundamentos Matemáticos, y se programa por objetivos semanales con ejercicios de evaluación continua en el curso virtual.</p>
+<div class="badges"><span class="badge mat">Matemáticas</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71901066</span><span class="ttl">Ingeniería de Computadores I</span><span class="meta">6 ECTS · Básica</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Estructura y funcionamiento del computador: unidad de proceso, unidad de control, juego de instrucciones, modos de direccionamiento, ensamblador y organización de la memoria. Se recomienda haber cursado Fundamentos de Sistemas Digitales y es la base de las otras dos Ingeniería de Computadores.</p>
+<div class="badges"><span class="badge sis">Sistemas</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71901043</span><span class="ttl">Estrategias de Programación y Estructuras de Datos</span><span class="meta">6 ECTS · Básica</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Listas, pilas, colas, árboles, tablas hash y grafos, con análisis de coste, y las estrategias algorítmicas clásicas: divide y vencerás, voraces, vuelta atrás, programación dinámica. Tiene <strong>prácticas experimentales</strong> evaluadas en el Centro Asociado.</p>
+<p>No es reconocible desde DAM y es la asignatura de programación que más te va a exigir: DAM enseña a construir con estructuras, esta enseña a construirlas y a demostrar su coste.</p>
+<div class="badges"><span class="badge prog">Programación</span><span class="badge mat">Matemáticas</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71901089</span><span class="ttl">Autómatas, Gramáticas y Lenguajes</span><span class="meta">6 ECTS · Obligatoria</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>La única obligatoria de primer curso. Autómatas finitos deterministas y no deterministas, expresiones regulares, gramáticas y jerarquía de Chomsky, autómatas a pila, lenguajes libres de contexto y máquinas de Turing. Abre la línea que llega hasta <em>Procesadores del Lenguaje</em> y <em>Complejidad y Computabilidad</em>.</p>
+<div class="badges"><span class="badge mat">Matemáticas</span><span class="badge prog">Programación</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71901072</span><span class="ttl">Programación Orientada a Objetos</span><span class="meta">6 ECTS · Básica</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p><strong>Reconocible desde DAM. No la matricules.</strong> Clases, objetos, herencia, polimorfismo, interfaces, excepciones y colecciones, con prácticas experimentales en el Centro Asociado.</p>
+<div class="badges"><span class="badge prog">Programación</span></div>
+</div></div></div>
+
+<h3>Segundo curso · 60 ECTS</h3>
+<h4>Primer cuatrimestre</h4>
+<div class="acc" data-i="uned"><button><span class="code">71012030</span><span class="ttl">Redes de Computadores</span><span class="meta">6 ECTS · Obligatoria</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Arquitectura de protocolos por capas, modelo TCP/IP, nivel de enlace y control de errores, direccionamiento y encaminamiento IP, transporte con TCP y UDP, y protocolos de aplicación. Es la asignatura raíz de todo lo que después llamarás seguridad de red.</p>
+<p>Junto con <em>Programación de Servicios y Procesos</em> de DAM, es tu combinación más rentable de cara al perfil de ciberseguridad: una te da el protocolo, la otra la implementación.</p>
+<div class="badges"><span class="badge red">Redes</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71902019</span><span class="ttl">Programación y Estructuras de Datos Avanzadas</span><span class="meta">6 ECTS · Obligatoria</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Estructuras avanzadas —árboles equilibrados, montículos, grafos con algoritmos de caminos mínimos y árboles de recubrimiento—, análisis amortizado y diseño avanzado de algoritmos. Con prácticas experimentales en el Centro Asociado.</p>
+<div class="badges"><span class="badge prog">Programación</span><span class="badge mat">Matemáticas</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71902025</span><span class="ttl">Ingeniería de Computadores II</span><span class="meta">6 ECTS · Obligatoria</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Segmentación de cauce, jerarquía de memoria y caché, memoria virtual, sistemas de entrada/salida y evaluación de prestaciones. Continúa directamente Ingeniería de Computadores I.</p>
+<div class="badges"><span class="badge sis">Sistemas</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71902031</span><span class="ttl">Gestión de Empresas Informáticas</span><span class="meta">6 ECTS · Básica</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Concepto de empresa, marco jurídico e institucional, organización, contabilidad básica, análisis de inversiones y gestión de proyectos desde la perspectiva económica. Es la asignatura de empresa exigida por la ordenación del título.</p>
+<p>Es la más asequible de segundo y una buena candidata para cuatrimestres en los que la carga de DAM se dispare.</p>
+<div class="badges"><span class="badge emp">Empresa</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71902048</span><span class="ttl">Sistemas Operativos</span><span class="meta">6 ECTS · Obligatoria</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p><strong>Reconocible desde DAM. No la matricules.</strong> Procesos e hilos, planificación, concurrencia y sincronización, interbloqueos, gestión de memoria, sistemas de ficheros y entrada/salida. Estudia el temario por tu cuenta aunque te la reconozcan: ver punto 2.</p>
+<div class="badges"><span class="badge sis">Sistemas</span></div>
+</div></div></div>
+<h4>Segundo cuatrimestre</h4>
+<div class="acc" data-i="uned"><button><span class="code">71012018</span><span class="ttl">Ingeniería de Computadores III</span><span class="meta">6 ECTS · Obligatoria</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Arquitecturas paralelas, multiprocesadores y multicomputadores, coherencia de caché, programación paralela y modelos de rendimiento. Solo se imparte en el grado de Ingeniería Informática, no en el de Tecnologías de la Información.</p>
+<div class="badges"><span class="badge sis">Sistemas</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71012024</span><span class="ttl">Teoría de los Lenguajes de Programación</span><span class="meta">6 ECTS · Obligatoria</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Semántica y paradigmas de programación: funcional, lógico, imperativo y orientado a objetos, sistemas de tipos, evaluación y ligadura. Con prácticas experimentales en el Centro Asociado.</p>
+<div class="badges"><span class="badge prog">Programación</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71902077</span><span class="ttl">Introducción a la Ingeniería de Software</span><span class="meta">6 ECTS · Obligatoria</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Ciclos de vida, ingeniería de requisitos, análisis y diseño orientado a objetos con UML, verificación y validación, y gestión de la configuración. Es el complemento teórico de lo que en DAM haces como práctica en Entornos de Desarrollo y el Proyecto Intermodular.</p>
+<div class="badges"><span class="badge prog">Programación</span><span class="badge emp">Empresa</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71902060</span><span class="ttl">Fundamentos de Inteligencia Artificial</span><span class="meta">6 ECTS · Obligatoria</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p>Representación del conocimiento, búsqueda heurística, satisfacción de restricciones, razonamiento lógico y una introducción al aprendizaje automático. Es la puerta de entrada al bloque de sistemas inteligentes, que en la UNED tiene bastante peso en cuarto.</p>
+<div class="badges"><span class="badge mat">Matemáticas</span><span class="badge prog">Programación</span></div>
+</div></div></div>
+<div class="acc" data-i="uned"><button><span class="code">71902083</span><span class="ttl">Bases de Datos</span><span class="meta">6 ECTS · Obligatoria</span><span class="caret"></span></button><div class="body"><div class="inner">
+<p><strong>Reconocible desde DAM. No la matricules.</strong> Modelo relacional, álgebra relacional, SQL, diseño y normalización.</p>
+<div class="badges"><span class="badge bd">Bases de datos</span></div>
+</div></div></div>
+
+<h3>Tercero y cuarto · qué elegir si el objetivo es ciberseguridad</h3>
+<p>Tercero es enteramente obligatorio salvo 12 ECTS de optatividad, y cuarto combina 30 ECTS obligatorios, 12 optativos y un Proyecto Fin de Grado de 18 ECTS que solo puede defenderse una vez superadas todas las demás asignaturas. Las obligatorias de tercero son <em>Diseño y Administración de Sistemas Operativos</em>, <em>Sistemas Distribuidos</em>, <em>Diseño del Software</em>, <em>Sistemas de Bases de Datos</em> y <em>Procesadores del Lenguaje I</em> en el primer cuatrimestre, y <em>Procesadores del Lenguaje II</em>, <em>Sistemas en Tiempo Real</em> y <strong><em>Seguridad</em></strong> en el segundo. Las de cuarto son <em>Complejidad y Computabilidad</em>, <em>Aprendizaje Automático</em>, <em>Ampliación de Sistemas Inteligentes</em>, <em>Gestión de Proyectos Informáticos</em> y <em>Ética y Legislación</em>.</p>
+<p>Para el perfil que buscas, la asignatura obligatoria <em>Seguridad</em> (71013124) es la única de ese nombre en todo el plan, y las optativas que la complementan son <strong>Teoría de la Información y Criptografía Básica</strong> (71024091, cuarto) y <strong>Arquitecturas y Protocolos TCP/IP</strong> (71023111, tercero). Esas dos son la elección natural de tus 12 ECTS optativos no reconocidos si acabaras el grado en la UNED. <em>Pruebas de Software</em> (71013147) sería la tercera candidata si te interesa el desarrollo seguro. Dicho con claridad: <strong>la UNED no ofrece un itinerario de ciberseguridad</strong>, ofrece una asignatura obligatoria y dos optativas afines, y esa es una de las razones de peso a favor del traslado que planteas en el punto 5.</p>
+
+<div class="call" data-i="uned">
+<h4>Estudiante a tiempo parcial</h4>
+<p>La UNED publica una tabla oficial de programación a tiempo parcial para este grado que propone <strong>menos de 40 ECTS por curso</strong>, y recomienda expresamente que quien compatibilice el estudio con otras actividades no se matricule del curso completo. Tu situación es el caso de manual: no es una concesión, es la vía prevista por la universidad.</p>
+</div>
+
+<div class="rec">
+<h4>Recomendaciones de este bloque</h4>
+<p>Para 2026-27 propongo cinco asignaturas, 30 ECTS: Lógica y Estructuras Discretas y Fundamentos Matemáticos en el primer cuatrimestre; Estadística, Ingeniería de Computadores I y Autómatas en el segundo. Deja Fundamentos Físicos y Estrategias de Programación para 2027-28, cuando ya sepas cómo respira la doble carga.</p>
+<p>Haz los cursos cero de Física y Matemáticas de la UNED este verano. Son gratuitos, de acceso libre y sin fecha de inicio, y la propia Escuela los recomienda antes del comienzo de curso.</p>
+<p>El título exige acreditar nivel B1 de inglés. No lo dejes para cuarto: es el mismo requisito que después te pedirá cualquier convocatoria Erasmus, normalmente en B2.</p>
+</div>
+</div></section>
+<section id="s5"><div class="wrap">
+<div class="eyebrow">05 · Punto de decisión</div>
+<h2>Traslado a 3º-4º: UJI vs UV vs UPV</h2>
+<p class="lede">Los datos para que decidas tú en 2028. No decido por ti, pero sí señalo dónde están los riesgos que no se ven desde fuera.</p>
+
+<h3>Cómo funciona el traslado, y qué cambia en tu caso</h3>
+<p>El camino normal de un estudiante que quiere cambiar de universidad es la <em>admisión por cambio de estudios universitarios oficiales</em>: se solicita directamente al centro de destino, sin pasar por la preinscripción general, y el requisito estatal —fijado en su día por el R.D. 1393/2007 y mantenido en la normativa posterior— es <strong>tener reconocidos al menos 30 ECTS</strong> en la titulación de destino. Cada universidad fija después sus propios criterios de baremación y, sobre todo, <strong>el número de plazas</strong>, que se aprueba curso a curso por centro y suele ser de un puñado por titulación.</p>
+<p>En tu caso concreto el requisito de los 30 ECTS no es el problema: llegarás a 2028 con dos cursos de un grado de la misma rama y del mismo ámbito, de modo que el reconocimiento será holgado. El problema es el otro: <strong>compites por plazas escasas y la baremación es por expediente</strong>. Y aquí aparece la tensión de fondo de todo tu plan. Si durante 2026-2028 sacrificas nota para poder con la doble carga, llegas a la solicitud de traslado con el expediente que precisamente te penaliza en la baremación. La forma de proteger esto es matricular menos asignaturas y sacarlas con buena nota, en lugar de matricular muchas y aprobar raspado; lo cual refuerza la recomendación del punto 0.</p>
+<p>Hay una segunda vía que conviene tener viva y que conecta con lo que mencionabas de la UJI. Si el traslado no sale —porque no hay plazas ese año o porque la baremación no te alcanza—, <strong>siempre puedes entrar por preinscripción ordinaria en primer curso</strong> con tu nota de acceso, y una vez matriculado solicitar el reconocimiento de todo lo cursado en la UNED, que te colocaría directamente en tercero o cerca. Es un camino más largo administrativamente y consume una plaza de nuevo ingreso, pero es una red de seguridad real. Tu participación en el programa "Soy Olímpico" de la UJI y el resultado en el concurso de arquitectura técnica —quinto nacional, primero autonómico— no constituyen una vía de acceso alternativa por sí mismos, pero sí son un mérito relevante en convocatorias de colaboración con grupos de investigación, que la UJI ofrece desde primer curso a estudiantes con buen expediente <span class="unver">verifica si el programa sigue vigente y con qué efectos</span>.</p>
+
+<div class="tw">
+<table>
+<thead><tr><th>Criterio</th><th><span class="inst-tag" style="background:var(--uji)"></span>UJI · Castellón</th><th><span class="inst-tag" style="background:var(--uv)"></span>UV · València</th><th><span class="inst-tag" style="background:var(--upv)"></span>UPV · València</th></tr></thead>
+<tbody>
+<tr><td>Distancia desde Castellón capital</td><td class="n">≈8 km al campus Riu Sec; bus urbano y bici</td><td class="n">≈70 km; Cercanías C-6 a Burjassot-Godella</td><td class="n">≈70 km; Cercanías + metro a Tarongers/Vera</td></tr>
+<tr><td>Coste de desplazamiento</td><td>Compatible con vivir en casa. Coste marginal.</td><td>Abono de tren o traslado de residencia</td><td>Abono de tren o traslado de residencia</td></tr>
+<tr><td>Tamaño y ambiente</td><td>Campus único, compacto, todo a pie. Grado con 90 plazas de nuevo ingreso.</td><td>Universidad generalista grande, campus de Burjassot distinto del centro urbano</td><td>Politécnica pura, campus de Vera muy grande, ETSINF con mucha masa crítica</td></tr>
+<tr><td>Itinerario de ciberseguridad</td><td><strong>Seguretat Informàtica</strong> obligatoria en 3º + optativa <strong>Ciberseguretat</strong> en la mención de Ingeniería de Computadores</td><td>Grado con itinerarios; oferta concreta de seguridad <span class="unver">no verificado</span></td><td>ETSINF con rama de seguridad y máster propio de ciberseguridad en el mismo centro</td></tr>
+<tr><td>Continuidad hacia máster</td><td>Sin máster de ciberseguridad propio. Másteres afines: Sistemas Inteligentes, Matemática Computacional</td><td>Oferta de posgrado amplia <span class="unver">no verificado</span></td><td><strong>Máster U. en Ciberseguridad y Ciberinteligencia</strong> en la ETSINF, con matrícula abierta para 2026/27</td></tr>
+<tr><td>Plan de estudios vigente</td><td><strong>Plan nuevo P26</strong>, implantándose desde 2026-27</td><td>Plan vigente <span class="unver">no verificado</span></td><td>Plan vigente <span class="unver">no verificado</span></td></tr>
+<tr><td>Requisito de traslado</td><td>≥30 ECTS reconocidos, plazas por centro</td><td>≥30 ECTS reconocidos, resolución en septiembre, matrícula en el turno que quede libre</td><td>≥30 ECTS reconocidos, plazas por centro</td></tr>
+<tr><td>Idioma de docencia</td><td>Castellano y valenciano; algunas asignaturas en inglés</td><td>Castellano y valenciano</td><td>Castellano y valenciano; grupos de alto rendimiento en inglés</td></tr>
+<tr><td>Precio del crédito público</td><td colspan="3">Fijado por decreto anual de la Generalitat Valenciana e <strong>idéntico en las tres</strong> para el mismo nivel de experimentalidad <span class="unver">importe exacto 2026-27 no verificado</span></td></tr>
+</tbody>
+</table>
+<caption>Comparativa de síntesis. Las celdas marcadas como no verificadas son datos que no he podido confirmar en fuente oficial vigente y que debes comprobar antes de decidir, previsiblemente en 2027-2028 cuando publiquen las condiciones de ese curso.</caption>
+</div>
+
+<h3>En qué caso conviene cada una</h3>
+<p>La lógica de la decisión cambia por completo según qué pongas primero, y por eso no tiene sentido una recomendación única. Si lo que pesa es <strong>la logística y el coste real</strong>, la UJI gana sin discusión y por un margen que no es pequeño: seguir viviendo en Castellón mientras cursas 3º y 4º convierte el traslado en un cambio de aula, no de vida, y libera un presupuesto y una cantidad de horas semanales de desplazamiento que en Valencia se van íntegras al tren. Dado que además vienes de dos años de carga doble, llegar a tercero con margen de recuperación no es un lujo. Si lo que pesa es <strong>la especialización en ciberseguridad</strong>, la UPV es la opción con el ecosistema más completo, porque la ETSINF concentra grado y Máster Universitario en Ciberseguridad y Ciberinteligencia en el mismo centro, y eso significa profesorado que investiga en el área, TFGs dirigidos en esa línea y una transición al máster sin cambio de institución ni de expediente. Si lo que pesa es <strong>la amplitud y la posibilidad de combinar con matemáticas o con perfiles más científicos</strong>, la UV es la universidad generalista de las tres y la que ofrece un entorno menos exclusivamente ingenieril, algo que importa si en algún momento contemplas doctorado o un giro hacia datos.</p>
+<p>Hay un factor de riesgo que solo afecta a la UJI y que conviene poner sobre la mesa antes de que te enamores de la cercanía: <strong>la UJI está implantando un plan de estudios nuevo, el P26, precisamente desde el curso 2026-27</strong>. Cuando tú solicites el traslado en 2028, tercero del plan nuevo estará implantándose por primera vez o a punto de hacerlo, y las tablas de reconocimiento desde otras titulaciones tendrán poco o ningún rodaje. Eso no es un impedimento, pero sí significa que el estudio de tu expediente será una resolución caso por caso y no la aplicación de una tabla asentada. Pregunta explícitamente por esto en la Escola Superior de Tecnologia i Ciències Experimentals cuando prepares la solicitud.</p>
+
+<div class="rec">
+<h4>Recomendaciones de este bloque</h4>
+<p>Protege la nota media desde el primer cuatrimestre de la UNED. Es el único activo que se baremará en 2028 y el que decide si el traslado es una gestión o una lotería.</p>
+<p>En otoño de 2027, antes de que se abran los plazos, escribe a las tres secretarías pidiendo tres datos concretos: plazas ofertadas por traslado en Ingeniería Informática el curso anterior, criterios de baremación aplicados y estudio previo orientativo de reconocimiento sobre tu expediente. Con esas tres respuestas la decisión se toma sola.</p>
+<p>Solicita traslado y preinscripción ordinaria en paralelo. Son procesos compatibles y el segundo cuesta poco más que rellenar un formulario.</p>
+</div>
+</div></section>
+
+<section id="s6"><div class="wrap">
+<div class="eyebrow">06 · La opción más probable</div>
+<h2>UJI — plan de estudios completo, cuatro años</h2>
+<p class="lede">Plan nuevo P26 del grado en Enginyeria Informàtica, el que estará vigente cuando llegues. 240 ECTS, cuatro menciones.</p>
+<p>Conviene entender la estructura antes del listado. La UJI organiza el grado con formación básica en primero, obligatorias en segundo y tercero, y una especialización concentrada en cuarto: <strong>ocho asignaturas optativas de una sola mención</strong>, más las prácticas académicas externas y el TFG, que en esta titulación se realizan de forma conjunta mediante una estancia en empresa. Las menciones tienen <strong>un máximo de 25 plazas cada una</strong>, se asignan <strong>en función de la nota del expediente</strong> y exigen tener superados al menos 90 ECTS para poder matricularse. Para matricular prácticas y TFG hay que haber superado el 70% de los créditos de formación básica y obligatoria.</p>
+
+<div class="warn">
+<h4>Lo que esto significa para alguien que llega por traslado</h4>
+<p>Un estudiante que empieza en la UJI en primero llega a la elección de mención con un expediente construido íntegramente en la UJI. Tú llegarías con un expediente mayoritariamente de la UNED, y compites por 25 plazas contra compañeros que llevan dos años en la casa. No he encontrado publicado cómo pondera la UJI las calificaciones de origen en esa baremación <span class="unver">no verificado</span>. Es la pregunta más importante que debes hacer antes de elegir destino, porque de ella depende si podrás cursar la mención donde vive la asignatura de Ciberseguretat.</p>
+</div>
+
+<h3>Primer curso · formación básica</h3>
+<div class="acc" data-i="uji"><button><span class="code">FBC</span><span class="ttl">Eines de Programació · Herramientas de Programación</span><span class="meta">1º</span><span class="caret"></span></button><div class="body"><div class="inner"><p>Entorno de trabajo del informático: sistema operativo, línea de órdenes, control de versiones, herramientas de construcción y depuración. Sustituye a la antigua <em>Informàtica Bàsica</em> y es la asignatura que más solapa con tu módulo de Sistemas Informáticos de DAM.</p><div class="badges"><span class="badge sis">Sistemas</span><span class="badge prog">Programación</span></div></div></div></div>
+<div class="acc" data-i="uji"><button><span class="code">FBC</span><span class="ttl">Programació I i II</span><span class="meta">1º · dos semestres</span><span class="caret"></span></button><div class="body"><div class="inner"><p>Secuencia de introducción a la programación repartida en los dos semestres: de los fundamentos imperativos y la modularidad hasta la orientación a objetos y las estructuras de datos elementales. Es el bloque que con toda probabilidad te reconocerían desde el expediente UNED y desde DAM.</p><div class="badges"><span class="badge prog">Programación</span></div></div></div></div>
+<div class="acc" data-i="uji"><button><span class="code">FB</span><span class="ttl">Càlcul · Àlgebra Lineal · Matemàtica Discreta · Estadística</span><span class="meta">1º</span><span class="caret"></span></button><div class="body"><div class="inner"><p>El bloque matemático completo, repartido entre los dos semestres. Se corresponde razonablemente bien con <em>Fundamentos Matemáticos</em>, <em>Lógica y Estructuras Discretas</em> y <em>Estadística</em> de la UNED, que son precisamente las que te recomiendo cursar primero: es el reconocimiento más limpio que llevarás en la mochila.</p><div class="badges"><span class="badge mat">Matemáticas</span></div></div></div></div>
+<div class="acc" data-i="uji"><button><span class="code">FBC</span><span class="ttl">Electrònica · Fonaments de Computadors</span><span class="meta">1º</span><span class="caret"></span></button><div class="body"><div class="inner"><p>Componentes y circuitos electrónicos por un lado, y representación de la información, álgebra de Boole, circuitos lógicos y estructura básica del computador por otro. Equivalen aproximadamente a <em>Fundamentos Físicos</em> y <em>Fundamentos de Sistemas Digitales</em> de la UNED.</p><div class="badges"><span class="badge sis">Sistemas</span></div></div></div></div>
+<div class="acc" data-i="uji"><button><span class="code">FB</span><span class="ttl">Dret de les Tecnologies de la Informació i les Comunicacions</span><span class="meta">1º</span><span class="caret"></span></button><div class="body"><div class="inner"><p>Marco jurídico de las TIC: protección de datos, propiedad intelectual e industrial del software, contratación tecnológica y delitos informáticos. Es la pieza legal que en la UNED aparece más tarde, en <em>Ética y Legislación</em> de cuarto, y que en un perfil de ciberseguridad tiene más valor del que parece.</p><div class="badges"><span class="badge emp">Empresa</span><span class="badge seg">Seguridad</span></div></div></div></div>
+
+<h3>Segundo curso · obligatorias</h3>
+<div class="acc" data-i="uji"><button><span class="code">OB</span><span class="ttl">Programació III · Estructures de Dades · Verificació i Validació</span><span class="meta">2º</span><span class="caret"></span></button><div class="body"><div class="inner"><p>El bloque de programación avanzada: estructuras de datos con análisis de coste, programación con calidad y, en <em>Verificació i Validació</em>, pruebas sistemáticas —unitarias, de integración, cobertura— tratadas como asignatura propia y no como apéndice. La UJI le da a las pruebas un peso que la UNED reserva a una optativa.</p><div class="badges"><span class="badge prog">Programación</span></div></div></div></div>
+<div class="acc" data-i="uji"><button><span class="code">OB</span><span class="ttl">Estructura de Computadors · Sistemes Operatius · Administració de Sistemes Operatius</span><span class="meta">2º</span><span class="caret"></span></button><div class="body"><div class="inner"><p>Arquitectura del computador, teoría de sistemas operativos y, de forma separada, su administración práctica. Este desdoblamiento es relevante para ti: el reconocimiento desde DAM cubriría con más naturalidad <em>Administració de Sistemes Operatius</em> que <em>Sistemes Operatius</em>, que es la parte teórica.</p><div class="badges"><span class="badge sis">Sistemas</span></div></div></div></div>
+<div class="acc" data-i="uji"><button><span class="code">OB</span><span class="ttl">Xarxes d'Ordinadors</span><span class="meta">2º</span><span class="caret"></span></button><div class="body"><div class="inner"><p>Arquitectura de redes, pila TCP/IP, encaminamiento y protocolos de aplicación, con laboratorio. Es el equivalente directo de <em>Redes de Computadores</em> de la UNED y el prerrequisito real de la seguridad de tercero.</p><div class="badges"><span class="badge red">Redes</span></div></div></div></div>
+<div class="acc" data-i="uji"><button><span class="code">OB</span><span class="ttl">Bases de Dades · Intel·ligència Artificial · Iniciativa Empresarial</span><span class="meta">2º</span><span class="caret"></span></button><div class="body"><div class="inner"><p>Bases de datos relacionales y diseño; introducción a la IA —búsqueda, representación del conocimiento, aprendizaje— impartida en lengua extranjera; y una asignatura de emprendimiento que ocupa el lugar que en la UNED tiene <em>Gestión de Empresas Informáticas</em>.</p><div class="badges"><span class="badge bd">Bases de datos</span><span class="badge mat">Matemáticas</span><span class="badge emp">Empresa</span></div></div></div></div>
+
+<h3>Tercer curso · el año en el que entrarías</h3>
+<div class="acc" data-i="uji"><button><span class="code">OB</span><span class="ttl">Seguretat Informàtica</span><span class="meta">3º</span><span class="caret"></span></button><div class="body"><div class="inner"><p><strong>La asignatura clave para tu objetivo, y es obligatoria para todo el mundo.</strong> Fundamentos de criptografía, autenticación y control de acceso, seguridad de red y de aplicaciones, vulnerabilidades comunes y contramedidas. Que sea obligatoria y no optativa significa que la cursas seguro, con independencia de qué mención consigas.</p><div class="badges"><span class="badge seg">Seguridad</span><span class="badge red">Redes</span></div></div></div></div>
+<div class="acc" data-i="uji"><button><span class="code">OB</span><span class="ttl">Enginyeria del Programari · Disseny i Implementació de Sistemes d'Informació</span><span class="meta">3º · en lengua extranjera</span><span class="caret"></span></button><div class="body"><div class="inner"><p>Metodologías, requisitos, arquitectura y diseño del software, y su aplicación a la construcción de sistemas de información completos. Ambas marcadas como docencia en lengua extranjera en el plan P26, lo que en la práctica te da preparación gratuita de cara al Erasmus.</p><div class="badges"><span class="badge prog">Programación</span><span class="badge bd">Bases de datos</span></div></div></div></div>
+<div class="acc" data-i="uji"><button><span class="code">OB</span><span class="ttl">Algorísmia · Programació Concurrent i Paral·lela · Tecnologies i Aplicacions Web</span><span class="meta">3º</span><span class="caret"></span></button><div class="body"><div class="inner"><p>Diseño y análisis de algoritmos; concurrencia, hilos, sincronización y paralelismo; y desarrollo web de cliente y servidor. La tercera solapa fuertemente con lo que traes de DAM, y las dos primeras con <em>PEDA</em> y con <em>Programación de Servicios y Procesos</em>.</p><div class="badges"><span class="badge prog">Programación</span><span class="badge red">Redes</span></div></div></div></div>
+<div class="acc" data-i="uji"><button><span class="code">OB/OP</span><span class="ttl">Sostenibilitat: Enfocament Computacional · Teoria d'Autòmats i Llenguatges Formals</span><span class="meta">3º</span><span class="caret"></span></button><div class="body"><div class="inner"><p>Una asignatura sobre impacto ambiental y eficiencia computacional, en lengua extranjera, y la teoría de autómatas y lenguajes formales, que en el plan P26 figura como optativa —a diferencia de la UNED, donde es obligatoria de primero—. Si traes <em>Autómatas, Gramáticas y Lenguajes</em> aprobada, ese hueco lo puedes destinar a otra cosa.</p><div class="badges"><span class="badge mat">Matemáticas</span></div></div></div></div>
+
+<h3>Cuarto curso · mención, prácticas y TFG</h3>
+<p>Cuarto tiene una sola asignatura obligatoria común, <em>Computació en el Núvol i en la Frontera</em>, impartida en lengua extranjera, y todo lo demás es mención más prácticas externas y TFG realizados conjuntamente en empresa. Las cuatro menciones y su contenido son:</p>
+<div class="tw">
+<table>
+<thead><tr><th>Mención</th><th>Asignaturas optativas</th><th>Encaje con ciberseguridad</th></tr></thead>
+<tbody>
+<tr><td><strong>Enginyeria de Computadors</strong></td><td>Administració de Serveis de Xarxa · Arquitectura de Computadors · Centres de Dades · Internet de les Coses · Sistemes Digitals · Acceleradors per al Càlcul Intensiu · <strong>Ciberseguretat</strong> · Sistemes Encastats</td><td><strong>La más alta.</strong> Es la única mención que incluye una asignatura llamada Ciberseguretat, además de servicios de red y centros de datos</td></tr>
+<tr><td><strong>Tecnologies de la Informació</strong></td><td>Administració de Serveis de Xarxa · Anàlisi Intel·ligent de Dades · Centres de Dades · Tecnologies Web Avançades · Sistemes de Gestió de Bases de Dades · Avaluació d'Infraestructures Informàtiques · Enginyeria de Serveis · Administració de Sistemes Informàtics</td><td>Alta en infraestructura y operación, que es la base del perfil de seguridad defensiva y del SOC, pero sin asignatura específica de seguridad</td></tr>
+<tr><td><strong>Enginyeria del Programari</strong></td><td>Gestió de Projectes · Mètodes Avançats de Verificació i Validació · Sistemes de Gestió de Bases de Dades · Enginyeria de Requisits · Qualitat del Programari · Gestió Avançada de Dades · Disseny del Programari · Mètodes Àgils</td><td>Media, por la vía del desarrollo seguro y la verificación. Es la mención más continuista con DAM</td></tr>
+<tr><td><strong>Intel·ligència Artificial</strong></td><td>Representació del Coneixement i Raonament · Anàlisi Intel·ligent de Dades · Acceleradors per al Càlcul Intensiu · Ètica de la IA · Aprenentatge Profund · Interacció i Llenguatge Natural · Percepció Visual · Sistemes Intel·ligents i Cognició</td><td>Baja para seguridad clásica, alta si en algún momento derivas hacia detección de anomalías o seguridad basada en aprendizaje</td></tr>
+</tbody>
+</table>
+<caption>Menciones del plan P26 según la publicación oficial de la UJI. Cada una con máximo 25 plazas, asignadas por expediente, y con 90 ECTS superados como requisito previo.</caption>
+</div>
+
+<div class="call" data-i="uji">
+<h4>El hallazgo contraintuitivo</h4>
+<p>Si tu objetivo es ciberseguridad, en la UJI la mención que te corresponde <strong>no es Tecnologies de la Informació</strong>, que es donde la intuición la buscaría, sino <strong>Enginyeria de Computadors</strong>. Es la única que contiene <em>Ciberseguretat</em> como asignatura, junto a administración de servicios de red, centros de datos, IoT y sistemas empotrados. Es una combinación con más hardware del que probablemente esperabas, y merece que la mires con detalle antes de fijar el destino.</p>
+</div>
+
+<div class="rec">
+<h4>Recomendaciones de este bloque</h4>
+<p>Si eliges la UJI, planifica desde el día uno para entrar en la mención de Enginyeria de Computadors, lo que significa cuidar el expediente y confirmar cuanto antes cómo se computan tus notas de la UNED en esa baremación.</p>
+<p>Aprovecha que varias asignaturas de tercero y cuarto se imparten en lengua extranjera. Es la vía más barata de llegar al B2 que te pedirá el Erasmus, y aparece en el expediente.</p>
+<p>Las guías docentes del plan P26 para tercero y cuarto todavía no pueden estar publicadas porque el plan se implanta curso a curso <span class="unver">no verificado</span>. Consúltalas en el SIA de la UJI en 2028, no antes: cualquier detalle de temario que leas ahora puede cambiar.</p>
+</div>
+</div></section>
+<section id="s7"><div class="wrap">
+<div class="eyebrow">07 · Movilidad</div>
+<h2>Erasmus en tu caso concreto</h2>
+<p class="lede">Primero cómo funciona para cualquiera, después las tres cosas que en tu situación funcionan distinto.</p>
+<p>Para un estudiante estándar el mecanismo es estable en todas las universidades españolas. La convocatoria de movilidad se publica <strong>el curso anterior al de la estancia</strong>, normalmente entre octubre y enero, de modo que quien quiere irse en cuarto solicita en otoño de tercero. Los requisitos habituales son tener superado un mínimo de créditos —con frecuencia el equivalente a primero completo—, acreditar nivel de idioma, que en destinos europeos suele ser B1 como suelo y B2 como estándar competitivo, y presentar una propuesta de acuerdo académico con las asignaturas que se cursarán fuera y su correspondencia. La adjudicación de plazas se hace por baremo, con la nota media del expediente como factor dominante y el idioma como segundo factor.</p>
+
+<h3>Lo que cambia por haber llegado por traslado</h3>
+<p>El primer efecto es de calendario y es el más severo. Si te trasladas para cursar tercero en septiembre de 2028, la convocatoria para una estancia en cuarto se abre en otoño de 2028, es decir <strong>a las pocas semanas de haber llegado</strong>. Tendrás que solicitarla sin apenas expediente generado en la universidad de destino y sin conocer el centro. El expediente que se barema en ese momento será, por tanto, esencialmente el que traes de la UNED, lo que refuerza por tercera vez el mismo consejo: la nota media de 2026-2028 es el activo que te abre o te cierra las tres puertas siguientes.</p>
+<p>El segundo efecto es de elegibilidad formal. No he podido verificar si la UJI, la UV o la UPV exigen antigüedad mínima en la universidad para participar en movilidad, ni cómo tratan un expediente reconocido de otra universidad en el baremo <span class="unver">no verificado</span>. Es una pregunta directa para la Oficina de Relaciones Internacionales del destino que elijas, y conviene hacerla <em>antes</em> de decidir el destino, no después.</p>
+<p>El tercer efecto es de oportunidad y juega a tu favor. Cursar el grado a ritmo comprimido significa que tendrás un año de margen —el curso 2030-31 del punto 1— en el que quedarán créditos sueltos. Eso convierte el Erasmus en cuarto en algo más manejable de lo habitual: puedes irte con una carga académica moderada en destino y dejar en casa las asignaturas que exijan continuidad con el profesorado local, en particular las prácticas externas y el TFG, que en la UJI se realizan conjuntamente mediante estancia en empresa y que por su naturaleza es mejor no intentar hacer a distancia.</p>
+
+<h3>Destinos con sentido si la especialización es ciberseguridad</h3>
+<p>La lógica de elección no debería ser la ciudad sino el grupo de investigación y la oferta de asignaturas del semestre. Europa tiene un mapa razonablemente claro en seguridad: los <strong>Países Bajos</strong> concentran mucha capacidad, con Radboud University Nijmegen y TU Eindhoven como referencias históricas en criptografía y seguridad de sistemas; <strong>Alemania</strong> tiene un ecosistema muy denso alrededor de Ruhr-Universität Bochum, TU Darmstadt y el entorno de los institutos Fraunhofer y CISPA; <strong>Bélgica</strong> mantiene en KU Leuven uno de los grupos de criptografía más citados del continente; los países nórdicos, con Aalto en Finlandia y KTH en Suecia, combinan seguridad de redes con sistemas distribuidos; y <strong>Francia</strong>, a través del entorno de Inria y de universidades como Rennes o Grenoble, tiene fuerza en verificación formal y seguridad de software.</p>
+<p>Ahora el matiz práctico, que es lo que suele decidir de verdad. <strong>Que una universidad sea fuerte en un área no significa que tenga convenio Erasmus con la tuya, ni plazas para informática, ni asignaturas de ese área abiertas a estudiantes entrantes de grado</strong>; buena parte de la investigación puntera en seguridad se imparte en máster y no en grado. El listado anterior es una guía para orientar la búsqueda, no una lista de destinos disponibles: los convenios reales los publica cada universidad en su convocatoria anual y son la única fuente que decide <span class="unver">no verificado</span>.</p>
+
+<div class="rec">
+<h4>Recomendaciones de este bloque</h4>
+<p>Acredita un B2 de inglés durante 2026-2028, mientras aún tienes el ritmo de estudio que impone DAM. Hacerlo en tercero, con el traslado recién hecho y la convocatoria abierta, es la peor ventana posible.</p>
+<p>En cuanto sepas tu destino, consulta su listado de convenios Erasmus para informática y cruza los destinos disponibles con la oferta de asignaturas de seguridad de ese semestre. Ese cruce, y no el prestigio general, es lo que determina si el Erasmus te suma especialización o solo experiencia.</p>
+<p>Planifica el Erasmus en el primer semestre de cuarto y deja prácticas y TFG en casa para el segundo. Es la configuración que menos riesgo genera sobre la titulación.</p>
+</div>
+</div></section>
+
+<section id="s8"><div class="wrap">
+<div class="eyebrow">08 · Posgrado</div>
+<h2>Máster: opciones reales en Valencia y Castellón</h2>
+<p class="lede">Programas vigentes y verificados, y la diferencia real entre quedarte donde estás o volver a cambiar.</p>
+<p>El más relevante para tu objetivo está identificado y con matrícula viva. El <strong>Máster Universitario en Ciberseguridad y Ciberinteligencia (MUCC)</strong> de la <span style="color:var(--upv);font-weight:600">UPV</span> se imparte en la E.T.S. de Ingeniería Informática y tiene publicada la información de matrícula para el curso 2026/2027, con preinscripción por fases —la fase 2 del último proceso fue del 15 al 26 de junio de 2026—. Su contenido cubre criptología y seguridad de los datos, gestión de incidentes, desarrollo y despliegue seguro, pentesting y hacking ético, seguridad del IoT, ciberconciencia situacional, generación de ciberinteligencia, informática forense y análisis de malware, más aspectos legales y deontológicos. El acceso está dirigido de forma preferente a graduados en Ingeniería Informática y en Ingeniería de Telecomunicación, y se admite a otros titulados TIC afines con evaluación de la comisión académica. El título estaba en proceso de reacreditación por la AVAP en el momento de esta consulta, lo cual es un procedimiento ordinario de renovación, no un problema de vigencia.</p>
+<p>En la <span style="color:var(--uji);font-weight:600">UJI</span> el resultado es distinto y conviene decirlo sin adornos: <strong>la UJI no oferta máster universitario de ciberseguridad ni máster habilitante de Ingeniería Informática</strong>. La propia página del grado enumera como másteres oficiales relacionados el de Sistemas Inteligentes, el de Matemática Computacional, el de Profesorado, y dos Erasmus Mundus —Robótica Inteligente Marina y Marítima, y Tecnología Geoespacial—, y añade que con el grado se puede acceder también a otros másteres. Si tu plan es hacer el máster de ciberseguridad, la UJI no es el punto de llegada aunque sea el punto de paso.</p>
+<p>Para la <span style="color:var(--uv);font-weight:600">UV</span> y para el resto de la oferta de Valencia no he podido confirmar denominaciones oficiales vigentes, créditos ni precios en fuente institucional <span class="unver">no verificado</span>. Sí existe oferta privada consolidada en la ciudad —Universidad Europea y VIU, entre otras— pero como esto último no lo he verificado en las webs oficiales de esas universidades, lo dejo señalado y no lo desarrollo. La comprobación es sencilla y conviene hacerla en el momento en que sea relevante, hacia 2030, porque la oferta de máster se mueve mucho más rápido que la de grado.</p>
+<p>Una precisión que ahorra tiempo: la UNED tiene <strong>Máster Universitario en Ciberseguridad</strong> propio, además del de Ingeniería Informática. No está en Valencia ni en Castellón, así que queda fuera de tu criterio geográfico, pero es una opción que ya conoces por dentro y que no exige mudanza si al final el trabajo condiciona la decisión.</p>
+
+<h3>Quedarse o cambiar de universidad para el máster</h3>
+<p>El camino normal es continuar en la misma universidad, y tiene ventajas concretas que no son sentimentales: el expediente ya está allí, no hay traslado ni tasas asociadas, el profesorado que dirigió tu TFG puede dirigir el TFM y el acceso suele estar priorizado o al menos simplificado para egresados propios. En tu caso hay una razón adicional de peso: <strong>llegarías al máster habiendo cambiado ya de institución dos veces</strong> —de la UNED al destino presencial, y antes de eso del IES a la universidad—, y cada cambio consume tiempo administrativo y capital de relaciones.</p>
+<p>La consecuencia se lee directamente sobre el punto 5. Si eliges la <strong>UPV</strong> para 3º-4º, la continuidad hacia el MUCC es la trayectoria más limpia posible: mismo centro, mismo claustro, TFG y TFM en la misma línea, y ningún cambio en 2031. Si eliges la <strong>UJI</strong>, aceptas de entrada que el máster implicará un cambio de universidad, muy probablemente a la UPV, con lo que la decisión no es "UJI o UPV" sino "UJI ahora y UPV después" frente a "UPV desde 2028". Si eliges la <strong>UV</strong>, la respuesta depende de una oferta de posgrado que no he verificado y que debes comprobar antes de que esa elección pese.</p>
+
+<div class="rec">
+<h4>Recomendaciones de este bloque</h4>
+<p>Si el máster de ciberseguridad es el destino firme y no una posibilidad, la coherencia máxima la da la UPV desde 2028. Si prefieres la UJI por logística —que es un motivo perfectamente sólido con dos años de carga doble a las espaldas—, asume el cambio de universidad en 2031 y planifícalo desde 2030.</p>
+<p>Comprueba en 2030 los requisitos de acceso del MUCC en la web de la UPV. Los másteres cambian criterios de admisión con frecuencia y el detalle de complementos formativos importa si vienes por una vía atípica.</p>
+</div>
+</div></section>
+
+<section id="s9"><div class="wrap">
+<div class="eyebrow">09 · Mercado</div>
+<h2>Ciberseguridad vs IA/datos vs desarrollo</h2>
+<p class="lede">Aquí tengo que ser explícito sobre los límites: el razonamiento estructural lo puedo sostener, las cifras salariales concretas no las he verificado.</p>
+
+<div class="warn">
+<h4>Lo que no voy a inventar</h4>
+<p>Me pediste rangos salariales junior y senior en España y en la Comunitat Valenciana, demanda actual y tiempos de entrada al mercado, todo con datos concretos. <strong>No he podido verificar esas cifras en una fuente vigente y fiable</strong>, y darte números aproximados de memoria sería exactamente lo que me pediste no hacer. Las fuentes que sí dan ese dato con metodología y actualización anual son las guías salariales de Hays, Michael Page y Spring Professional, los informes del Observatorio Nacional de Tecnología y Sociedad, los datos de INCIBE sobre demanda de perfiles de ciberseguridad y la Encuesta de Estructura Salarial del INE desagregada por CNAE 62. Consúltalas directamente: son gratuitas y se publican cada año.</p>
+</div>
+
+<h3>El razonamiento que sí se sostiene sin cifras</h3>
+<p>Hay una diferencia estructural entre las tres vías que no depende de la coyuntura salarial, y es la que conviene entender. La <strong>ciberseguridad</strong> tiene una demanda que no la genera principalmente el mercado sino la regulación: NIS2, DORA en el sector financiero, el Esquema Nacional de Seguridad para quien trabaja con administración pública y el Reglamento de Ciberresiliencia obligan a las organizaciones a dotarse de perfiles concretos con independencia de si el año es bueno o malo. Eso produce una demanda menos cíclica que la del desarrollo, que sube y baja con la inversión en producto. A cambio, es la vía con la <strong>barrera de entrada más alta en el nivel junior</strong>: casi ninguna organización pone a alguien sin experiencia a responder incidentes, de modo que el itinerario habitual pasa por dos o tres años previos en desarrollo, sistemas o soporte antes de girar a seguridad. Un perfil junior de seguridad puro es raro; un perfil junior de desarrollo que en tres años se mueve a seguridad de aplicaciones es lo normal.</p>
+<p>La vía de <strong>IA y datos</strong> tiene la demanda más visible y la mayor dispersión interna. Hay una diferencia enorme entre analista de datos, ingeniero de datos e investigador en aprendizaje automático, y solo el tercero exige el nivel de matemáticas que la gente asume para toda la categoría. La entrada es accesible por el lado de la ingeniería de datos —que es en buena medida SQL, pipelines y sistemas distribuidos— y muy exigente por el lado del modelado. La incógnita real es cuánto de esta demanda es estructural y cuánto es un ciclo de inversión, y esa pregunta no tiene respuesta fiable todavía.</p>
+<p>El <strong>desarrollo</strong> es la vía de entrada más rápida al mercado por un margen amplio, y es exactamente donde tu título de DAM te coloca en 2028. Es también donde la presión sobre el tramo junior es mayor, porque es el escalón donde más gente entra y donde las herramientas de asistencia han cambiado más el trabajo. La compensación crece con la especialización —sistemas distribuidos, rendimiento, plataforma— más que con los años.</p>
+
+<h3>Qué combinación de tu propio itinerario te acerca a cada vía</h3>
+<div class="tw">
+<table>
+<thead><tr><th>Vía</th><th>Desde DAM</th><th>Desde UNED / UJI</th><th>Certificaciones de referencia</th></tr></thead>
+<tbody>
+<tr><td><strong>Ciberseguridad</strong></td><td>Programación de Servicios y Procesos (concurrencia, sockets, criptografía aplicada, TLS); Sistemas Informáticos</td><td>Redes de Computadores; Seguridad; Teoría de la Información y Criptografía Básica; Arquitecturas y Protocolos TCP/IP · en UJI: Seguretat Informàtica obligatoria + mención Enginyeria de Computadors</td><td>Entrada: CompTIA Security+. Ofensiva: OSCP de Offensive Security. Gestión: CISSP y CISM, que exigen años de experiencia acreditada. Defensiva: certificaciones de análisis de incidentes tipo Blue Team</td></tr>
+<tr><td><strong>IA y datos</strong></td><td>Bases de Datos; Acceso a Datos; Sistemas de Gestión Empresarial</td><td>Estadística; Fundamentos de IA; Aprendizaje Automático; Ampliación de Sistemas Inteligentes; Minería de Datos · en UJI: mención Intel·ligència Artificial</td><td>Certificaciones de proveedor cloud en el área de datos y ML; el peso real lo llevan el portafolio y las publicaciones, no la certificación</td></tr>
+<tr><td><strong>Desarrollo</strong></td><td>Todo el ciclo. Es literalmente para lo que habilita el título</td><td>Estrategias de Programación y PEDA; Introducción a la Ingeniería de Software; Diseño del Software · en UJI: mención Enginyeria del Programari</td><td>Poco relevantes salvo las de plataforma cloud. Aquí manda el código público y la experiencia</td></tr>
+</tbody>
+</table>
+<caption>Asignaturas según los planes verificados de UNED 7101 y UJI P26. Las certificaciones son las de referencia reconocida del sector; su vigencia y requisitos concretos deben comprobarse en el emisor.</caption>
+</div>
+
+<div class="rec">
+<h4>Recomendaciones de este bloque</h4>
+<p>Tu itinerario ya está bien alineado con ciberseguridad sin necesidad de forzarlo: DAM te da el desarrollo, que es la puerta de entrada real al sector, y el grado te da las redes y la criptografía. La pieza que te falta y que nadie te va a dar en clase es la práctica: plataformas de retos tipo CTF y laboratorios propios, empezando en 2027 y no en 2030.</p>
+<p>No persigas certificaciones caras siendo estudiante. Security+ tiene sentido al terminar el grado; OSCP tiene sentido cuando ya trabajas y alguien la paga. Antes de eso, el retorno está en el portafolio.</p>
+<p>Consulta tú mismo las guías salariales que he citado antes de tomar cualquier decisión basada en dinero. Es un ejercicio de veinte minutos y te dará cifras de este año, no de mi memoria.</p>
+</div>
+</div></section>
+
+<section id="s10"><div class="wrap">
+<div class="eyebrow">10 · Escenario doble</div>
+<h2>Trabajar en 3º-4º con el DAM ya terminado</h2>
+<p class="lede">Dos caminos desarrollados en paralelo, sin decidir por ti, y una comparación final de qué gana y qué pierde cada uno de cara a la contratación.</p>
+<p>El punto de partida es que en 2028 tendrás algo que casi ningún estudiante de tercero tiene: un <strong>título profesional que habilita para trabajar</strong>, no una expectativa. Eso cambia la naturaleza de la pregunta. Para un estudiante normal, trabajar durante la carrera significa empleo no cualificado y sin relación con los estudios; para ti significaría trabajo del sector, con lo cual el análisis no es "estudiar o ganar dinero" sino "acumular experiencia relevante o acumular profundidad técnica".</p>
+
+<h3>Camino A · Compaginar trabajo con el grado presencial</h3>
+<p>Los puestos realistas con DAM y dos años de grado son tres. <strong>Soporte técnico o de aplicaciones</strong> es el más compatible con horario de clases porque suele organizarse por turnos y admite tardes, pero es el que menos aporta a tu especialización. <strong>Desarrollo junior a tiempo parcial</strong> es el que más aporta y el más difícil de conseguir a media jornada: el mercado de desarrollo tiende a jornada completa, y los contratos de 20 horas suelen darse en empresas pequeñas o en modalidad de prácticas remuneradas. El <strong>freelance</strong> —mantenimiento de aplicaciones, integraciones, pequeños desarrollos— es el más flexible en horario y el más irregular en ingresos, y consume una cantidad de tiempo de gestión comercial que la gente subestima sistemáticamente.</p>
+<p>La compatibilidad horaria con un grado presencial es peor de lo que parece. Un grado de ingeniería no se organiza como una jornada de mañana: las clases y prácticas de laboratorio se reparten a lo largo del día y cambian por semestre, de modo que no puedes comprometer un bloque fijo de tardes con un empleador hasta conocer el horario del semestre. Además, la UJI advierte expresamente que <strong>el estudiantado admitido por traslado se matricula en el turno horario que quede disponible</strong>, no en el que prefiera. Es un detalle administrativo con consecuencias grandes: llegar por traslado significa no elegir turno, y no elegir turno significa no poder garantizar disponibilidad laboral.</p>
+<p>Durante el Erasmus el análisis cambia de nuevo. Trabajar en el país de destino con contrato local es posible pero añade una capa de gestión administrativa y fiscal considerable, y el propio sentido de la estancia —idioma, red de contactos, asignaturas que no tienes en casa— se diluye si dedicas las tardes a facturar. El trabajo remoto para un empleador español durante el Erasmus es técnicamente viable pero tiene implicaciones de residencia fiscal y de convenio que conviene consultar antes, no después.</p>
+
+<h3>Camino B · No trabajar y usar ese tiempo</h3>
+<p>La alternativa no es "descansar", y planteada como descanso no compite. Planteada como inversión sí: ese tiempo puede ir a <strong>prácticas curriculares</strong>, que en la UJI están integradas en el propio plan junto al TFG mediante estancia en empresa y por tanto ya te dan experiencia contractual sin renunciar a créditos; a <strong>profundizar en la especialización</strong> con laboratorio propio, CTFs, contribución a proyectos de código abierto y lectura técnica sostenida; o a <strong>colaborar con grupos de investigación</strong>, algo que la UJI ofrece desde primer curso a estudiantes con buen expediente y que es la vía natural si en algún momento contemplas doctorado.</p>
+<p>Hay un argumento adicional específico de tu caso que suele pasarse por alto. Llegarás a tercero después de dos años de carga doble sostenida. La probabilidad de que llegues con un margen de energía cómodo no es alta, y tercero de una ingeniería presencial —con <em>Algorísmia</em>, <em>Programació Concurrent i Paral·lela</em> y <em>Seguretat Informàtica</em> en el mismo curso— no es el año para experimentar con sobrecarga.</p>
+
+<h3>Comparación directa de cara a la contratación</h3>
+<div class="tw">
+<table>
+<thead><tr><th>Dimensión</th><th>Camino A · trabajar</th><th>Camino B · no trabajar</th></tr></thead>
+<tbody>
+<tr><td>Qué ve el reclutador en 2031</td><td>Dos o tres años cotizados en el sector. Reduce a cero la objeción del "sin experiencia"</td><td>Expediente sólido, portafolio técnico y prácticas curriculares. Convence en la parte técnica, no en la de fiabilidad laboral</td></tr>
+<tr><td>Efecto sobre la especialización</td><td>Depende del puesto. En soporte, casi nulo. En desarrollo, alto pero desviado hacia lo que pague la empresa</td><td>Dirigido por ti hacia ciberseguridad, que es donde el mercado no te va a colocar de entrada</td></tr>
+<tr><td>Riesgo académico</td><td>Alto. Sin control sobre el turno horario tras el traslado y con tercero cargado</td><td>Bajo</td></tr>
+<tr><td>Efecto sobre el Erasmus</td><td>Negativo. Compite directamente con lo que hace valiosa la estancia</td><td>Neutro o positivo</td></tr>
+<tr><td>Efecto sobre el acceso a máster</td><td>Indirecto y negativo si baja la nota media</td><td>Positivo: la nota media es criterio de admisión en másteres con demanda</td></tr>
+<tr><td>Ingreso económico</td><td>Real desde 2028</td><td>Nulo hasta las prácticas curriculares</td></tr>
+</tbody>
+</table>
+<caption>Comparación de escenarios. Ninguno domina al otro en todas las dimensiones: A compra empleabilidad inmediata a costa de margen académico, B compra especialización y expediente a costa de tiempo.</caption>
+</div>
+
+<div class="rec">
+<h4>Recomendación de este bloque</h4>
+<p>Si tuviera que señalar dónde está el punto de equilibrio en tu caso concreto: <strong>no trabajar en tercero y sí en cuarto</strong>. Tercero es el año del aterrizaje tras el traslado, de la solicitud de mención y de la convocatoria Erasmus, tres cosas que se juegan con el expediente. Cuarto ya tiene prácticas externas integradas en el plan, con lo que la experiencia laboral llega por la vía curricular sin competir con las clases. Y si aun así quieres ingresos antes, el freelance de bajo volumen es preferible al empleo por cuenta ajena precisamente porque es el único formato que se adapta a un horario que no controlas.</p>
+</div>
+</div></section>
+<section id="s11"><div class="wrap">
+<div class="eyebrow">11 · Semana tipo</div>
+<h2>Organización semanal, años 1º y 2º</h2>
+<p class="lede">La aritmética completa primero, y después una plantilla que no exige tus mejores días para funcionar.</p>
+
+<h3>Las cuentas, sin adornos</h3>
+<div class="gauge">
+  <div class="grow">
+    <div class="glab"><span>Lo que ya está comprometido</span><span>30 h/semana</span></div>
+    <div class="gtrack"><div class="gseg" style="background:var(--dam);width:100%">DAM · 30 h lectivas presenciales de mañana</div></div>
+  </div>
+  <div class="grow">
+    <div class="glab"><span>Tu capacidad declarada de estudio autónomo</span><span>14 – 21 h/semana</span></div>
+    <div class="gtrack"><div class="gseg" style="background:#9AA5B4;width:66%">2 h/día · 14 h</div><div class="gseg" style="background:#5D6A7C;width:34%">hasta 3 h/día · 21 h</div></div>
+  </div>
+  <div class="grow">
+    <div class="glab"><span>Reparto realista de esa capacidad</span><span>DAM + UNED</span></div>
+    <div class="gtrack"><div class="gseg" style="background:var(--dam);width:33%">DAM 5-7 h</div><div class="gseg" style="background:var(--uned);width:67%">UNED 7-15 h</div></div>
+  </div>
+  <div class="grow">
+    <div class="glab"><span>Lo que exigiría un curso completo de la UNED</span><span>33 – 37 h/semana</span></div>
+    <div class="gtrack"><div class="gseg" style="background:#C0392B;width:100%">60 ECTS × 25 h = 1.500 h · imposible junto a DAM</div></div>
+  </div>
+</div>
+<p>De ahí sale la banda realista. Entre 7 y 15 horas semanales dedicadas a la UNED, a lo largo de unas 38 semanas lectivas más el refuerzo de verano para la convocatoria de septiembre, dan entre <strong>14 y 27 ECTS por curso</strong>. Los 30 ECTS que propongo en el punto 4 están en el extremo alto de esa banda: son alcanzables si sostienes las 3 horas la mayoría de los días, y no lo son si tu media real acaba siendo 2. La regla práctica es simple: <strong>matricula 30 ECTS en octubre y prepárate para dejar una asignatura sin presentar en febrero si el ritmo no acompaña</strong>, en lugar de matricular 60 y abandonar cuatro. Ambas cosas cuestan dinero, pero la primera no te destroza la nota media, que es el activo que necesitas intacto para el traslado.</p>
+
+<h3>Plantilla semanal</h3>
+<p>Está construida sobre dos hechos verificados: DAM es presencial de mañana con 30 horas lectivas, y las tutorías del Centro Asociado de Vila-real son <strong>de lunes a jueves de 17:00 a 22:00</strong>. El resto es una propuesta, no una prescripción.</p>
+<div class="tw">
+<table>
+<thead><tr><th class="n">Franja</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th><th>Sábado</th><th>Domingo</th></tr></thead>
+<tbody>
+<tr><td class="n">08:00–14:30</td>
+<td style="background:var(--dam-bg);color:var(--dam);font-weight:600">DAM</td><td style="background:var(--dam-bg);color:var(--dam);font-weight:600">DAM</td><td style="background:var(--dam-bg);color:var(--dam);font-weight:600">DAM</td><td style="background:var(--dam-bg);color:var(--dam);font-weight:600">DAM</td><td style="background:var(--dam-bg);color:var(--dam);font-weight:600">DAM</td><td>Libre</td><td>Libre</td></tr>
+<tr><td class="n">14:30–16:00</td><td colspan="5" style="text-align:center;color:var(--ink-3)">Comida y desconexión real — no es tiempo recuperable</td><td colspan="2" style="text-align:center;color:var(--ink-3)">—</td></tr>
+<tr><td class="n">16:00–18:00</td>
+<td style="background:var(--uned-bg);color:var(--uned);font-weight:600">UNED · bloque duro</td>
+<td style="background:var(--uned-bg);color:var(--uned);font-weight:600">UNED · bloque duro</td>
+<td style="background:var(--dam-bg);color:var(--dam);font-weight:600">DAM · proyectos</td>
+<td style="background:var(--uned-bg);color:var(--uned);font-weight:600">UNED · bloque duro</td>
+<td style="background:var(--dam-bg);color:var(--dam);font-weight:600">DAM · proyectos</td>
+<td style="background:var(--uned-bg);color:var(--uned);font-weight:600">UNED · 3 h seguidas</td>
+<td style="color:var(--ink-3)">Colchón</td></tr>
+<tr><td class="n">18:00–19:30</td>
+<td style="background:#EEF1F6;font-weight:600">Rugby / jujitsu</td><td style="color:var(--ink-3)">Libre</td><td style="background:#EEF1F6;font-weight:600">Rugby / jujitsu</td><td style="color:var(--ink-3)">Libre</td><td style="background:#EEF1F6;font-weight:600">Rugby / jujitsu</td><td style="color:var(--ink-3)">Libre</td><td style="color:var(--ink-3)">Libre</td></tr>
+<tr><td class="n">19:30–21:00</td>
+<td style="background:var(--uned-bg);color:var(--uned);font-weight:600">Tutoría UNED (online)</td>
+<td style="background:var(--uned-bg);color:var(--uned);font-weight:600">Tutoría UNED (online)</td>
+<td style="color:var(--ink-3)">Reserva</td>
+<td style="background:var(--uned-bg);color:var(--uned);font-weight:600">Tutoría UNED (online)</td>
+<td style="color:var(--ink-3)">Libre</td><td style="color:var(--ink-3)">Libre</td>
+<td style="background:var(--uned-bg);color:var(--uned);font-weight:600">Planificar la semana</td></tr>
+</tbody>
+</table>
+<caption>Suma aproximada: 30 h de DAM presencial, 4 h de proyectos de DAM, 9-11 h de UNED entre estudio y tutorías, y 4,5 h de deporte. Los huecos marcados como reserva o colchón son deliberados: existen para absorber los días de 0 h sin que la semana se descuadre.</caption>
+</div>
+
+<h3>Tres decisiones que hacen que la plantilla aguante</h3>
+<p>La primera es <strong>seguir las tutorías en línea salvo cuando sean obligatorias en presencia</strong>. Las tutorías de la UNED se ofrecen en varias modalidades —presencial, presencial más AVIP, solo AVIP, solo Teams— y el desplazamiento de Castellón a Vila-real y vuelta te cuesta cerca de una hora, que es entre un tercio y la mitad de tu capacidad diaria. Reserva el desplazamiento para lo que no se puede hacer de otro modo: las <strong>prácticas experimentales evaluadas en el Centro Asociado</strong>, que en tu plan afectan a Programación Orientada a Objetos, Estrategias de Programación, PEDA, Teoría de los Lenguajes de Programación y los dos Procesadores del Lenguaje. Ojo: dos de esas asignaturas están entre las que te recomiendo no matricular, así que en 1º-2º solo te afectaría <em>Estrategias de Programación</em>.</p>
+<p>La segunda es <strong>no repartir la UNED en trocitos diarios</strong>. Las asignaturas de matemáticas y de arquitectura de computadores no rinden en sesiones de 45 minutos: necesitan bloques largos para entrar en materia. Por eso la plantilla concentra tres bloques de dos horas entre semana y uno de tres el sábado, en vez de una hora diaria de lunes a domingo.</p>
+<p>La tercera es <strong>proteger el deporte en lugar de tratarlo como lo prescindible</strong>. Dijiste que es secundario y que debe encajar alrededor del estudio, y la plantilla lo respeta al ponerlo en la franja que peor rinde académicamente. Pero conviene ser honesto sobre el mecanismo: en un curso de 30 horas lectivas más estudio, lo que primero se cae no es el rendimiento sino la capacidad de sostener el ritmo en marzo, y tres sesiones semanales de deporte son una de las pocas cosas que protegen esa capacidad. Cuando llegue la semana mala, sacrifica una sesión de estudio antes que las tres de deporte.</p>
+
+<div class="rec">
+<h4>Recomendaciones de este bloque</h4>
+<p>Ajusta esta plantilla el primer día de clase con el horario real de El Caminàs. Si las clases acaban a las 14:20 en vez de a las 14:30 y hay alguna mañana con menos carga, esos huecos valen más que cualquier optimización nocturna.</p>
+<p>Los exámenes de la UNED se concentran en febrero y en mayo-junio, y coinciden con periodos de evaluación en DAM. Marca esas cuatro semanas en el calendario en septiembre y reduce en ellas la carga de proyectos de DAM adelantando trabajo en enero y en abril.</p>
+</div>
+</div></section>
+
+<section id="s12"><div class="wrap">
+<div class="eyebrow">12 · Gestión</div>
+<h2>Trámites y recursos prácticos</h2>
+<p class="lede">Incluye la respuesta concreta a lo que preguntabas sobre la biblioteca de la UJI, que no es la que esperabas.</p>
+
+<h3>Biblioteca de la UJI: qué puedes y qué no</h3>
+<p>Empiezo por la parte que sí he podido verificar en la normativa publicada, porque corrige la premisa de la pregunta. <strong>La UJI no tiene cabinas de estudio individuales</strong>: tiene <em>cabines de treball en grup</em>, con capacidad de 2 a 6 personas, disponibles de lunes a viernes en préstamo de hasta seis horas entre las 8 y las 20 h. Y la condición de préstamo es explícita: para llevarse la llave <strong>hay que presentar al menos dos carnets de la UJI</strong>, y el usuario que no lleve el carnet debe acreditarse con la hoja de matrícula más un documento identificativo. De modo que la respuesta a tu segunda pregunta es directa: <strong>no, no puedes usar esas cabinas sin ser alumno de la UJI</strong>, ni solo ni acompañado, porque el requisito no es de aforo sino de acreditación.</p>
+<p>Sobre la primera pregunta —si como alumno de la UNED puedes acceder a la biblioteca en época de exámenes— <strong>no he encontrado publicada una normativa de usuarios externos de la biblioteca de la UJI</strong> que resuelva el caso, ni una regla explícita sobre restricción de acceso a las salas en periodo de exámenes <span class="unver">no verificado</span>. Lo que sí consta es que el acceso a las instalaciones en periodos de exámenes se menciona vinculado a la presentación del carnet universitario, lo que apunta a que en ese periodo el control se endurece. En la práctica, casi todas las bibliotecas universitarias públicas españolas tienen una figura de usuario externo con derechos limitados, tramitada previa solicitud, y muchas restringen el acceso de externos precisamente durante exámenes por presión de aforo. Escribe a <em>biblioteca@uji.es</em> preguntando dos cosas concretas: si existe la figura de usuario externo y con qué derechos, y si hay restricción de acceso en periodo de exámenes. Es un correo de tres líneas y te evita presentarte allí en enero y que te den la vuelta en el torno.</p>
+<div class="call" data-i="uned">
+<h4>La alternativa que ya tienes pagada</h4>
+<p>Como estudiante matriculado en la UNED tienes derecho de uso de la biblioteca del Centro Asociado en Vila-real, además de acceso completo a la biblioteca digital de la UNED. No sustituye a un campus, pero para lo que necesitas en época de exámenes —un sitio silencioso y acceso a bibliografía— es la opción sin fricción administrativa. Añade la Biblioteca Pública Provincial de Castelló y la red municipal, que amplían horario en periodo de exámenes.</p>
+</div>
+
+<h3>Simultanear estudios: una corrección importante</h3>
+<p>El régimen de <em>simultaneidad de estudios</em> del que habla la normativa universitaria regula el caso de quien cursa <strong>dos titulaciones universitarias a la vez</strong>, y requiere autorización previa del rectorado del centro donde se quiere iniciar la segunda. Tu caso no es ese. Cursar un ciclo formativo de grado superior y un grado universitario simultáneamente <strong>no requiere autorización de simultaneidad</strong>, porque son enseñanzas de sistemas distintos: FP depende de la Conselleria d'Educació y el grado de la universidad, y ninguna de las dos matrículas condiciona a la otra. Son dos matrículas independientes, con dos calendarios independientes y sin trámite que las vincule. La única documentación específica que necesitarás es la de cada matrícula por separado.</p>
+
+<h3>Orden cronológico de trámites</h3>
+<div class="tw">
+<table>
+<thead><tr><th class="n">Cuándo</th><th>Qué</th><th>Dónde</th><th>Por qué en ese orden</th></tr></thead>
+<tbody>
+<tr><td class="n">Ya, agosto 2026</td><td><strong>Cerrar la plaza de DAM</strong>. El Caminàs ha publicado documentación de matrícula y la subasta de vacantes se celebra la primera semana de septiembre</td><td><span class="inst-tag" style="background:var(--dam)"></span>El Caminàs / Adminova</td><td>Es la matrícula con plazo más rígido y con plazas limitadas. Sin ella no hay plan</td></tr>
+<tr><td class="n">Agosto 2026</td><td>Cursos cero gratuitos de Física y Matemáticas</td><td><span class="inst-tag" style="background:var(--uned)"></span>UNED Abierta</td><td>Sin fecha de inicio ni coste. La Escuela los recomienda antes del comienzo de curso</td></tr>
+<tr><td class="n">Agosto–octubre 2026</td><td><strong>Matrícula UNED</strong> con las asignaturas del punto 4, evitando las cuatro reconocibles. Elegir Centro Asociado</td><td><span class="inst-tag" style="background:var(--uned)"></span>Portal de admisión y matrícula UNED</td><td>El plazo ordinario de la UNED se extiende hasta octubre <span class="unver">fechas exactas por confirmar</span></td></tr>
+<tr><td class="n">Septiembre 2026</td><td>Confirmar horario real de mañana y calendario de la formación en empresa</td><td><span class="inst-tag" style="background:var(--dam)"></span>Secretaría de El Caminàs</td><td>Determina la plantilla del punto 11 y la carga UNED de 2027-28</td></tr>
+<tr><td class="n">Durante 2027</td><td>Consulta por escrito sobre la vigencia de la tabla de reconocimiento para el título LFP</td><td><span class="inst-tag" style="background:var(--uned)"></span>ETSI Informática UNED</td><td>Un año de margen para reaccionar si la respuesta no es la esperada</td></tr>
+<tr><td class="n">Otoño 2027</td><td>Pedir a UJI, UV y UPV plazas de traslado, criterios de baremación y estudio orientativo de reconocimiento</td><td><span class="inst-tag" style="background:var(--uji)"></span><span class="inst-tag" style="background:var(--uv)"></span><span class="inst-tag" style="background:var(--upv)"></span></td><td>Antes de que se abran los plazos, no durante</td></tr>
+<tr><td class="n">Feb–abr 2028</td><td><strong>Solicitud de traslado</strong> y, en paralelo, preinscripción ordinaria como red de seguridad</td><td>Universidad de destino</td><td>Los plazos de admisión por cambio de estudios suelen ir de febrero a abril <span class="unver">confirmar en cada universidad</span></td></tr>
+<tr><td class="n">Junio 2028</td><td>Título de DAM y solicitud de reconocimiento de los 36 ECTS</td><td><span class="inst-tag" style="background:var(--dam)"></span>→ universidad de destino</td><td>El reconocimiento requiere el título ya expedido</td></tr>
+</tbody>
+</table>
+<caption>Los trámites con plazo rígido están en negrita. Todo lo demás admite margen, pero el orden importa: cada fila depende de que la anterior esté resuelta.</caption>
+</div>
+
+<div class="rec">
+<h4>Recomendaciones de este bloque</h4>
+<p>Abre hoy una carpeta con tres cosas: certificado de la PAU, DNI escaneado y expediente de Bachillerato. Las vas a necesitar en las dos matrículas de este otoño y otra vez en 2028.</p>
+<p>Escribe a la biblioteca de la UJI en septiembre, no en enero. Si existe la figura de usuario externo, tramitarla lleva días y en época de exámenes no habrá margen.</p>
+</div>
+</div></section>
+
+<section id="s13"><div class="wrap">
+<div class="eyebrow">13 · Honestidad sobre las fuentes</div>
+<h2>Qué está verificado y qué no</h2>
+<p class="lede">Pediste que dijera explícitamente dónde no llego. Esto es ese listado.</p>
+<div class="tw">
+<table>
+<thead><tr><th>Dato</th><th>Estado</th><th>Fuente o dónde comprobarlo</th></tr></thead>
+<tbody>
+<tr><td>Módulos y horas semanales de DAM en El Caminàs</td><td style="color:var(--ok);font-weight:600">Verificado</td><td>Tabla publicada por el centro en su página de Informàtica i Comunicacions (LFP)</td></tr>
+<tr><td>Reconocimiento de 36 ECTS desde DAM hacia el grado UNED</td><td style="color:var(--ok);font-weight:600">Verificado</td><td>Tabla oficial de la ETSI de Informática de la UNED, amparada en el R.D. 659/2023</td></tr>
+<tr><td>Plan de estudios UNED 7101, curso 2026/2027</td><td style="color:var(--ok);font-weight:600">Verificado</td><td>Guía de titulación oficial de la UNED con códigos de asignatura</td></tr>
+<tr><td>Ausencia de menciones en el grado de la UNED</td><td style="color:var(--ok);font-weight:600">Verificado</td><td>Estructura del plan y orientación al perfil de Computación</td></tr>
+<tr><td>Horario de tutorías en Vila-real (L-J, 17-22 h)</td><td style="color:var(--ok);font-weight:600">Verificado</td><td>Datos del centro asociado; Onda abre como extensión nueva en octubre de 2026</td></tr>
+<tr><td>Plan P26 de la UJI y sus cuatro menciones</td><td style="color:var(--ok);font-weight:600">Verificado</td><td>Publicación oficial del grado 2026 en la web de la UJI</td></tr>
+<tr><td>Cabinas de la biblioteca de la UJI: son de grupo y exigen dos carnets UJI</td><td style="color:var(--ok);font-weight:600">Verificado</td><td>Normativa de cabines de treball en grup de la Biblioteca UJI</td></tr>
+<tr><td>Existencia y matrícula 2026/27 del máster MUCC de la UPV</td><td style="color:var(--ok);font-weight:600">Verificado</td><td>Información de matrícula de la ETSINF, UPV</td></tr>
+<tr><td>Régimen dual: mínimo 500 h en empresa</td><td style="color:var(--ok);font-weight:600">Verificado</td><td>R.D. 659/2023 y desarrollo autonómico. <em>Reparto por trimestres en El Caminàs: no publicado</em></td></tr>
+<tr><td>Acceso de alumnado externo a la biblioteca UJI en exámenes</td><td style="color:var(--warn);font-weight:600">No verificado</td><td>Preguntar a biblioteca@uji.es</td></tr>
+<tr><td>Notas de corte de Informática en UJI, UV y UPV</td><td style="color:var(--warn);font-weight:600">No verificado</td><td>Publicación anual de la Generalitat Valenciana. <strong>Aviso:</strong> el 6,533 que aparece en la web de la UJI es un ejemplo didáctico, no la nota real</td></tr>
+<tr><td>Precio del crédito público valenciano 2026-27</td><td style="color:var(--warn);font-weight:600">No verificado</td><td>Decreto anual de precios públicos de la Generalitat Valenciana</td></tr>
+<tr><td>Plazas de traslado en Informática y criterios de baremación</td><td style="color:var(--warn);font-weight:600">No verificado</td><td>Se aprueban curso a curso por centro</td></tr>
+<tr><td>Planes vigentes de Informática en UV y UPV, y su oferta de seguridad</td><td style="color:var(--warn);font-weight:600">No verificado</td><td>Webs oficiales de ambas universidades</td></tr>
+<tr><td>Requisitos y baremo de Erasmus para estudiantes llegados por traslado</td><td style="color:var(--warn);font-weight:600">No verificado</td><td>Oficina de Relaciones Internacionales de cada universidad</td></tr>
+<tr><td>Rangos salariales y demanda por perfil en España y Comunitat Valenciana</td><td style="color:var(--warn);font-weight:600">No verificado</td><td>Guías salariales Hays, Michael Page, Spring Professional; ONTSI; INCIBE; INE (CNAE 62)</td></tr>
+<tr><td>Vigencia de la tabla de reconocimiento para el título DAM bajo modelo LFP</td><td style="color:var(--warn);font-weight:600">No verificado</td><td>Consulta pendiente a la ETSI de Informática de la UNED</td></tr>
+<tr><td>Horario lectivo concreto del turno de mañana en El Caminàs</td><td style="color:var(--warn);font-weight:600">No verificado</td><td>No publicado en la web del centro</td></tr>
+</tbody>
+</table>
+<caption>Dieciocho comprobaciones. Nueve resueltas contra fuente oficial, nueve pendientes de una consulta que en casi todos los casos es un correo electrónico.</caption>
+</div>
+<p>Una última observación de método. Las nueve filas sin verificar no están repartidas al azar: se concentran en 2028 y más adelante, que es exactamente donde no debe haber certezas todavía porque las condiciones se publican curso a curso. Lo que sí está cerrado es lo que necesitas para decidir <em>ahora</em>: qué matricular en la UNED este otoño, qué no matricular, y qué preguntas hacer durante 2027 para llegar a 2028 con la decisión de traslado tomada sobre datos y no sobre impresiones.</p>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+<p><b>Sobre este informe.</b> Elaborado en agosto de 2026 sobre fuentes institucionales consultadas en esa fecha: IES El Caminàs, UNED (grado 7101 y ETSI de Informática), Centro Asociado de la UNED en Castellón, Universitat Jaume I (grado y biblioteca) y Universitat Politècnica de València. Las condiciones de matrícula, plazas, precios y normativa cambian cada curso académico: comprueba en la fuente oficial antes de cualquier trámite.</p>
+<p>Los apartados marcados <span style="font-family:var(--mono);font-size:11px;background:#3A3115;color:#F0C674;padding:2px 6px;border-radius:3px">no verificado</span> señalan datos que no he podido confirmar en fuente vigente. No están rellenados con estimaciones.</p>
+</div></footer>
+
+<script>
+(function(){
+  document.querySelectorAll('.acc > button').forEach(function(b){
+    b.setAttribute('aria-expanded','false');
+    b.addEventListener('click',function(){
+      var a=b.parentElement, open=a.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+
+  var rail=document.getElementById('rail'), tog=document.getElementById('railToggle');
+  tog.addEventListener('click',function(){rail.classList.toggle('show');});
+  rail.addEventListener('click',function(e){
+    if(e.target.tagName==='A'&&window.innerWidth<=900) rail.classList.remove('show');
+  });
+
+  var links=Array.prototype.slice.call(rail.querySelectorAll('a')),
+      secs=links.map(function(l){return document.querySelector(l.getAttribute('href'));}).filter(Boolean);
+  function spy(){
+    var y=window.scrollY+140, cur=0;
+    secs.forEach(function(s,i){ if(s.offsetTop<=y) cur=i; });
+    links.forEach(function(l,i){ l.classList.toggle('on', i===cur); });
+  }
+  var tick=false;
+  window.addEventListener('scroll',function(){
+    if(!tick){window.requestAnimationFrame(function(){spy();tick=false;});tick=true;}
+  },{passive:true});
+  spy();
+
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ e.target.style.opacity=1; e.target.style.transform='none'; io.unobserve(e.target); }
+      });
+    },{rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('section .wrap > *').forEach(function(el){
+      el.style.opacity=0; el.style.transform='translateY(10px)';
+      el.style.transition='opacity .5s ease, transform .5s ease';
+      io.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>
